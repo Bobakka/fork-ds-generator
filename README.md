@@ -18,9 +18,17 @@ DS_ENDPOINT=http://your-graphql-server/graphql
 ```
 
 2. Если у вас возникают проблемы с OpenSSL при запуске на новых версиях Node.js, установите следующую переменную:
+
+Для Linux/MacOS
 ```bash
 export NODE_OPTIONS=--openssl-legacy-provider
 ```
+
+Для Windows
+```bash
+set NODE_OPTIONS=--openssl-legacy-provider
+```
+
 
 ### Сборка генератора кода
 ```bash
