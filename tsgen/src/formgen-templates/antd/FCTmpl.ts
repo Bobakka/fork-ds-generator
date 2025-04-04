@@ -372,6 +372,22 @@ const extractFormItemListStr = (typedInput: TypedInput): { importStr: string, fo
             </Form.Item>`, importStr: "", stateParamStr: "", modalStr: ""
             }
 
+
+            if (typedInput.inputType === '_DateTime')
+                return {
+                    formItemStr: `
+            <Form.Item label="${typedInputName}">
+                <DatePicker
+                    showTime={{ defaultValue: moment('00:00:00', 'HH:mm:ss') }}
+                    value={inputParameters.${typedInputName} ? moment(inputParameters.${typedInputName}, "YYYY-MM-DD HH:mm:ss") : null}
+                    onChange={moment => changeInputParameters({ ${typedInputName}: moment?.format("YYYY-MM-DDTHH:mm:ss") })}
+                    format="YYYY-MM-DD HH:mm:ss"
+                />
+            </Form.Item>`, importStr: "", stateParamStr: "", modalStr: ""
+                }
+    
+
+
         if (typedInput.inputType === 'Boolean')
             return {
                 formItemStr: `
