@@ -1,0 +1,48 @@
+fragment ClinicAttributes on _E_Clinic {
+  id
+  __typename
+  address {
+    city
+    flatNo
+    street
+  }
+  name
+}
+
+query searchClinic($cond: String) {
+  searchClinic(cond: $cond) {
+    elems {
+      ...ClinicAttributes
+    }
+  }
+}
+
+mutation getForUpdateClinic($id: ID!) {
+  packet {
+    getClinic(id: $id) {
+      ...ClinicAttributes
+    }
+  }
+}
+
+mutation createClinic($input: _CreateClinicInput!) {
+  packet {
+    createClinic(input: $input) {
+      ...ClinicAttributes
+    }
+  }
+}
+
+mutation updateClinic($input: _UpdateClinicInput!) {
+  packet {
+    updateClinic(input: $input) {
+      ...ClinicAttributes
+    }
+  }
+}
+
+mutation deleteClinic($id: ID!) {
+  packet {
+    deleteClinic(id: $id)
+  }
+}

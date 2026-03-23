@@ -1,0 +1,51 @@
+fragment ClinicDoctorAttributes on _E_ClinicDoctor {
+  id
+  __typename
+  aggregateRoot {
+    id
+  }
+  clinic {
+    id
+  }
+  doctor {
+    entityId
+  }
+}
+
+query searchClinicDoctor($cond: String) {
+  searchClinicDoctor(cond: $cond) {
+    elems {
+      ...ClinicDoctorAttributes
+    }
+  }
+}
+
+mutation getForUpdateClinicDoctor($id: ID!) {
+  packet {
+    getClinicDoctor(id: $id) {
+      ...ClinicDoctorAttributes
+    }
+  }
+}
+
+mutation createClinicDoctor($input: _CreateClinicDoctorInput!) {
+  packet {
+    createClinicDoctor(input: $input) {
+      ...ClinicDoctorAttributes
+    }
+  }
+}
+
+mutation updateClinicDoctor($input: _UpdateClinicDoctorInput!) {
+  packet {
+    updateClinicDoctor(input: $input) {
+      ...ClinicDoctorAttributes
+    }
+  }
+}
+
+mutation deleteClinicDoctor($id: ID!) {
+  packet {
+    deleteClinicDoctor(id: $id)
+  }
+}

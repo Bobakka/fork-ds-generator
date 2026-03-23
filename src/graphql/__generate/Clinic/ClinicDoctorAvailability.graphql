@@ -1,0 +1,53 @@
+fragment ClinicDoctorAvailabilityAttributes on _E_ClinicDoctorAvailability {
+  id
+  __typename
+  aggregateRoot {
+    id
+  }
+  beginDate
+  clinicDoctor {
+    id
+  }
+  clinicOffice {
+    id
+  }
+  endDate
+}
+
+query searchClinicDoctorAvailability($cond: String) {
+  searchClinicDoctorAvailability(cond: $cond) {
+    elems {
+      ...ClinicDoctorAvailabilityAttributes
+    }
+  }
+}
+
+mutation getForUpdateClinicDoctorAvailability($id: ID!) {
+  packet {
+    getClinicDoctorAvailability(id: $id) {
+      ...ClinicDoctorAvailabilityAttributes
+    }
+  }
+}
+
+mutation createClinicDoctorAvailability($input: _CreateClinicDoctorAvailabilityInput!) {
+  packet {
+    createClinicDoctorAvailability(input: $input) {
+      ...ClinicDoctorAvailabilityAttributes
+    }
+  }
+}
+
+mutation updateClinicDoctorAvailability($input: _UpdateClinicDoctorAvailabilityInput!) {
+  packet {
+    updateClinicDoctorAvailability(input: $input) {
+      ...ClinicDoctorAvailabilityAttributes
+    }
+  }
+}
+
+mutation deleteClinicDoctorAvailability($id: ID!) {
+  packet {
+    deleteClinicDoctorAvailability(id: $id)
+  }
+}

@@ -1,0 +1,49 @@
+fragment ClinicOfficeAttributes on _E_ClinicOffice {
+  id
+  __typename
+  aggregateRoot {
+    id
+  }
+  clinic {
+    id
+  }
+  officeNum
+}
+
+query searchClinicOffice($cond: String) {
+  searchClinicOffice(cond: $cond) {
+    elems {
+      ...ClinicOfficeAttributes
+    }
+  }
+}
+
+mutation getForUpdateClinicOffice($id: ID!) {
+  packet {
+    getClinicOffice(id: $id) {
+      ...ClinicOfficeAttributes
+    }
+  }
+}
+
+mutation createClinicOffice($input: _CreateClinicOfficeInput!) {
+  packet {
+    createClinicOffice(input: $input) {
+      ...ClinicOfficeAttributes
+    }
+  }
+}
+
+mutation updateClinicOffice($input: _UpdateClinicOfficeInput!) {
+  packet {
+    updateClinicOffice(input: $input) {
+      ...ClinicOfficeAttributes
+    }
+  }
+}
+
+mutation deleteClinicOffice($id: ID!) {
+  packet {
+    deleteClinicOffice(id: $id)
+  }
+}

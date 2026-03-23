@@ -1,0 +1,48 @@
+fragment DoctorAttributes on _E_Doctor {
+  id
+  __typename
+  doctorType {
+    id
+  }
+  person {
+    entityId
+  }
+}
+
+query searchDoctor($cond: String) {
+  searchDoctor(cond: $cond) {
+    elems {
+      ...DoctorAttributes
+    }
+  }
+}
+
+mutation getForUpdateDoctor($id: ID!) {
+  packet {
+    getDoctor(id: $id) {
+      ...DoctorAttributes
+    }
+  }
+}
+
+mutation createDoctor($input: _CreateDoctorInput!) {
+  packet {
+    createDoctor(input: $input) {
+      ...DoctorAttributes
+    }
+  }
+}
+
+mutation updateDoctor($input: _UpdateDoctorInput!) {
+  packet {
+    updateDoctor(input: $input) {
+      ...DoctorAttributes
+    }
+  }
+}
+
+mutation deleteDoctor($id: ID!) {
+  packet {
+    deleteDoctor(id: $id)
+  }
+}

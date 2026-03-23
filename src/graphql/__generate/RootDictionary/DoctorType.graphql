@@ -1,0 +1,32 @@
+fragment DoctorTypeAttributes on _E_DoctorType {
+  id
+  __typename
+  descr
+  name
+}
+
+query searchDoctorType($cond: String) {
+  searchDoctorType(cond: $cond) {
+    elems {
+      ...DoctorTypeAttributes
+    }
+  }
+}
+
+mutation getForUpdateDoctorType($id: ID!) {
+  packet: dictionaryPacket {
+    getDoctorType(id: $id) {
+      ...DoctorTypeAttributes
+    }
+  }
+}
+
+mutation updateOrCreateDoctorType($input: _CreateDoctorTypeInput!) {
+  dictionaryPacket {
+    updateOrCreateDoctorType(input: $input) {
+      returning {
+        ...DoctorTypeAttributes
+      }
+    }
+  }
+}

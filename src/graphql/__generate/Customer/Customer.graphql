@@ -1,0 +1,46 @@
+fragment CustomerAttributes on _E_Customer {
+  id
+  __typename
+  insuranceNum
+  person {
+    entityId
+  }
+}
+
+query searchCustomer($cond: String) {
+  searchCustomer(cond: $cond) {
+    elems {
+      ...CustomerAttributes
+    }
+  }
+}
+
+mutation getForUpdateCustomer($id: ID!) {
+  packet {
+    getCustomer(id: $id) {
+      ...CustomerAttributes
+    }
+  }
+}
+
+mutation createCustomer($input: _CreateCustomerInput!) {
+  packet {
+    createCustomer(input: $input) {
+      ...CustomerAttributes
+    }
+  }
+}
+
+mutation updateCustomer($input: _UpdateCustomerInput!) {
+  packet {
+    updateCustomer(input: $input) {
+      ...CustomerAttributes
+    }
+  }
+}
+
+mutation deleteCustomer($id: ID!) {
+  packet {
+    deleteCustomer(id: $id)
+  }
+}

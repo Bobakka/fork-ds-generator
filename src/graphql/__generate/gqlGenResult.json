@@ -1,0 +1,67 @@
+[
+  {
+    "aggregateName": "Clinic",
+    "aggregateEntityList": [
+      {
+        "entitiyName": "Clinic",
+        "gqlStr": "fragment ClinicAttributes on _E_Clinic {\n  id\n  __typename\n  address {\n    city\n    flatNo\n    street\n  }\n  name\n}\n\nquery searchClinic($cond: String) {\n  searchClinic(cond: $cond) {\n    elems {\n      ...ClinicAttributes\n    }\n  }\n}\n\nmutation getForUpdateClinic($id: ID!) {\n  packet {\n    getClinic(id: $id) {\n      ...ClinicAttributes\n    }\n  }\n}\n\nmutation createClinic($input: _CreateClinicInput!) {\n  packet {\n    createClinic(input: $input) {\n      ...ClinicAttributes\n    }\n  }\n}\n\nmutation updateClinic($input: _UpdateClinicInput!) {\n  packet {\n    updateClinic(input: $input) {\n      ...ClinicAttributes\n    }\n  }\n}\n\nmutation deleteClinic($id: ID!) {\n  packet {\n    deleteClinic(id: $id)\n  }\n}\n"
+      },
+      {
+        "entitiyName": "ClinicCustomer",
+        "gqlStr": "fragment ClinicCustomerAttributes on _E_ClinicCustomer {\n  id\n  __typename\n  aggregateRoot {\n    id\n  }\n  clinic {\n    id\n  }\n  customer {\n    entityId\n  }\n}\n\nquery searchClinicCustomer($cond: String) {\n  searchClinicCustomer(cond: $cond) {\n    elems {\n      ...ClinicCustomerAttributes\n    }\n  }\n}\n\nmutation getForUpdateClinicCustomer($id: ID!) {\n  packet {\n    getClinicCustomer(id: $id) {\n      ...ClinicCustomerAttributes\n    }\n  }\n}\n\nmutation createClinicCustomer($input: _CreateClinicCustomerInput!) {\n  packet {\n    createClinicCustomer(input: $input) {\n      ...ClinicCustomerAttributes\n    }\n  }\n}\n\nmutation updateClinicCustomer($input: _UpdateClinicCustomerInput!) {\n  packet {\n    updateClinicCustomer(input: $input) {\n      ...ClinicCustomerAttributes\n    }\n  }\n}\n\nmutation deleteClinicCustomer($id: ID!) {\n  packet {\n    deleteClinicCustomer(id: $id)\n  }\n}\n"
+      },
+      {
+        "entitiyName": "ClinicDoctor",
+        "gqlStr": "fragment ClinicDoctorAttributes on _E_ClinicDoctor {\n  id\n  __typename\n  aggregateRoot {\n    id\n  }\n  clinic {\n    id\n  }\n  doctor {\n    entityId\n  }\n}\n\nquery searchClinicDoctor($cond: String) {\n  searchClinicDoctor(cond: $cond) {\n    elems {\n      ...ClinicDoctorAttributes\n    }\n  }\n}\n\nmutation getForUpdateClinicDoctor($id: ID!) {\n  packet {\n    getClinicDoctor(id: $id) {\n      ...ClinicDoctorAttributes\n    }\n  }\n}\n\nmutation createClinicDoctor($input: _CreateClinicDoctorInput!) {\n  packet {\n    createClinicDoctor(input: $input) {\n      ...ClinicDoctorAttributes\n    }\n  }\n}\n\nmutation updateClinicDoctor($input: _UpdateClinicDoctorInput!) {\n  packet {\n    updateClinicDoctor(input: $input) {\n      ...ClinicDoctorAttributes\n    }\n  }\n}\n\nmutation deleteClinicDoctor($id: ID!) {\n  packet {\n    deleteClinicDoctor(id: $id)\n  }\n}\n"
+      },
+      {
+        "entitiyName": "ClinicDoctorAvailability",
+        "gqlStr": "fragment ClinicDoctorAvailabilityAttributes on _E_ClinicDoctorAvailability {\n  id\n  __typename\n  aggregateRoot {\n    id\n  }\n  beginDate\n  clinicDoctor {\n    id\n  }\n  clinicOffice {\n    id\n  }\n  endDate\n}\n\nquery searchClinicDoctorAvailability($cond: String) {\n  searchClinicDoctorAvailability(cond: $cond) {\n    elems {\n      ...ClinicDoctorAvailabilityAttributes\n    }\n  }\n}\n\nmutation getForUpdateClinicDoctorAvailability($id: ID!) {\n  packet {\n    getClinicDoctorAvailability(id: $id) {\n      ...ClinicDoctorAvailabilityAttributes\n    }\n  }\n}\n\nmutation createClinicDoctorAvailability($input: _CreateClinicDoctorAvailabilityInput!) {\n  packet {\n    createClinicDoctorAvailability(input: $input) {\n      ...ClinicDoctorAvailabilityAttributes\n    }\n  }\n}\n\nmutation updateClinicDoctorAvailability($input: _UpdateClinicDoctorAvailabilityInput!) {\n  packet {\n    updateClinicDoctorAvailability(input: $input) {\n      ...ClinicDoctorAvailabilityAttributes\n    }\n  }\n}\n\nmutation deleteClinicDoctorAvailability($id: ID!) {\n  packet {\n    deleteClinicDoctorAvailability(id: $id)\n  }\n}\n"
+      },
+      {
+        "entitiyName": "ClinicDoctorTable",
+        "gqlStr": "fragment ClinicDoctorTableAttributes on _E_ClinicDoctorTable {\n  id\n  __typename\n  aggregateRoot {\n    id\n  }\n  beginDate\n  clinicCustomer {\n    id\n  }\n  clinicDoctorAvailability {\n    id\n  }\n  comment\n  endDate\n}\n\nquery searchClinicDoctorTable($cond: String) {\n  searchClinicDoctorTable(cond: $cond) {\n    elems {\n      ...ClinicDoctorTableAttributes\n    }\n  }\n}\n\nmutation getForUpdateClinicDoctorTable($id: ID!) {\n  packet {\n    getClinicDoctorTable(id: $id) {\n      ...ClinicDoctorTableAttributes\n    }\n  }\n}\n\nmutation createClinicDoctorTable($input: _CreateClinicDoctorTableInput!) {\n  packet {\n    createClinicDoctorTable(input: $input) {\n      ...ClinicDoctorTableAttributes\n    }\n  }\n}\n\nmutation updateClinicDoctorTable($input: _UpdateClinicDoctorTableInput!) {\n  packet {\n    updateClinicDoctorTable(input: $input) {\n      ...ClinicDoctorTableAttributes\n    }\n  }\n}\n\nmutation deleteClinicDoctorTable($id: ID!) {\n  packet {\n    deleteClinicDoctorTable(id: $id)\n  }\n}\n"
+      },
+      {
+        "entitiyName": "ClinicOffice",
+        "gqlStr": "fragment ClinicOfficeAttributes on _E_ClinicOffice {\n  id\n  __typename\n  aggregateRoot {\n    id\n  }\n  clinic {\n    id\n  }\n  officeNum\n}\n\nquery searchClinicOffice($cond: String) {\n  searchClinicOffice(cond: $cond) {\n    elems {\n      ...ClinicOfficeAttributes\n    }\n  }\n}\n\nmutation getForUpdateClinicOffice($id: ID!) {\n  packet {\n    getClinicOffice(id: $id) {\n      ...ClinicOfficeAttributes\n    }\n  }\n}\n\nmutation createClinicOffice($input: _CreateClinicOfficeInput!) {\n  packet {\n    createClinicOffice(input: $input) {\n      ...ClinicOfficeAttributes\n    }\n  }\n}\n\nmutation updateClinicOffice($input: _UpdateClinicOfficeInput!) {\n  packet {\n    updateClinicOffice(input: $input) {\n      ...ClinicOfficeAttributes\n    }\n  }\n}\n\nmutation deleteClinicOffice($id: ID!) {\n  packet {\n    deleteClinicOffice(id: $id)\n  }\n}\n"
+      }
+    ]
+  },
+  {
+    "aggregateName": "Customer",
+    "aggregateEntityList": [
+      {
+        "entitiyName": "Customer",
+        "gqlStr": "fragment CustomerAttributes on _E_Customer {\n  id\n  __typename\n  insuranceNum\n  person {\n    entityId\n  }\n}\n\nquery searchCustomer($cond: String) {\n  searchCustomer(cond: $cond) {\n    elems {\n      ...CustomerAttributes\n    }\n  }\n}\n\nmutation getForUpdateCustomer($id: ID!) {\n  packet {\n    getCustomer(id: $id) {\n      ...CustomerAttributes\n    }\n  }\n}\n\nmutation createCustomer($input: _CreateCustomerInput!) {\n  packet {\n    createCustomer(input: $input) {\n      ...CustomerAttributes\n    }\n  }\n}\n\nmutation updateCustomer($input: _UpdateCustomerInput!) {\n  packet {\n    updateCustomer(input: $input) {\n      ...CustomerAttributes\n    }\n  }\n}\n\nmutation deleteCustomer($id: ID!) {\n  packet {\n    deleteCustomer(id: $id)\n  }\n}\n"
+      }
+    ]
+  },
+  {
+    "aggregateName": "Doctor",
+    "aggregateEntityList": [
+      {
+        "entitiyName": "Doctor",
+        "gqlStr": "fragment DoctorAttributes on _E_Doctor {\n  id\n  __typename\n  doctorType {\n    id\n  }\n  person {\n    entityId\n  }\n}\n\nquery searchDoctor($cond: String) {\n  searchDoctor(cond: $cond) {\n    elems {\n      ...DoctorAttributes\n    }\n  }\n}\n\nmutation getForUpdateDoctor($id: ID!) {\n  packet {\n    getDoctor(id: $id) {\n      ...DoctorAttributes\n    }\n  }\n}\n\nmutation createDoctor($input: _CreateDoctorInput!) {\n  packet {\n    createDoctor(input: $input) {\n      ...DoctorAttributes\n    }\n  }\n}\n\nmutation updateDoctor($input: _UpdateDoctorInput!) {\n  packet {\n    updateDoctor(input: $input) {\n      ...DoctorAttributes\n    }\n  }\n}\n\nmutation deleteDoctor($id: ID!) {\n  packet {\n    deleteDoctor(id: $id)\n  }\n}\n"
+      }
+    ]
+  },
+  {
+    "aggregateName": "RootDictionary",
+    "aggregateEntityList": [
+      {
+        "entitiyName": "DoctorType",
+        "gqlStr": "fragment DoctorTypeAttributes on _E_DoctorType {\n  id\n  __typename\n  descr\n  name\n}\n\nquery searchDoctorType($cond: String) {\n  searchDoctorType(cond: $cond) {\n    elems {\n      ...DoctorTypeAttributes\n    }\n  }\n}\n\nmutation getForUpdateDoctorType($id: ID!) {\n  packet: dictionaryPacket {\n    getDoctorType(id: $id) {\n      ...DoctorTypeAttributes\n    }\n  }\n}\n\nmutation updateOrCreateDoctorType($input: _CreateDoctorTypeInput!) {\n  dictionaryPacket {\n    updateOrCreateDoctorType(input: $input) {\n      returning {\n        ...DoctorTypeAttributes\n      }\n    }\n  }\n}\n"
+      }
+    ]
+  },
+  {
+    "aggregateName": "Person",
+    "aggregateEntityList": [
+      {
+        "entitiyName": "Person",
+        "gqlStr": "fragment PersonAttributes on _E_Person {\n  id\n  __typename\n  birthDate\n  firstName\n  lastName\n  sex\n}\n\nquery searchPerson($cond: String) {\n  searchPerson(cond: $cond) {\n    elems {\n      ...PersonAttributes\n    }\n  }\n}\n\nmutation getForUpdatePerson($id: ID!) {\n  packet {\n    getPerson(id: $id) {\n      ...PersonAttributes\n    }\n  }\n}\n\nmutation createPerson($input: _CreatePersonInput!) {\n  packet {\n    createPerson(input: $input) {\n      ...PersonAttributes\n    }\n  }\n}\n\nmutation updatePerson($input: _UpdatePersonInput!) {\n  packet {\n    updatePerson(input: $input) {\n      ...PersonAttributes\n    }\n  }\n}\n\nmutation deletePerson($id: ID!) {\n  packet {\n    deletePerson(id: $id)\n  }\n}\n"
+      }
+    ]
+  }
+]

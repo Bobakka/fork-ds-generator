@@ -1,0 +1,46 @@
+fragment PersonAttributes on _E_Person {
+  id
+  __typename
+  birthDate
+  firstName
+  lastName
+  sex
+}
+
+query searchPerson($cond: String) {
+  searchPerson(cond: $cond) {
+    elems {
+      ...PersonAttributes
+    }
+  }
+}
+
+mutation getForUpdatePerson($id: ID!) {
+  packet {
+    getPerson(id: $id) {
+      ...PersonAttributes
+    }
+  }
+}
+
+mutation createPerson($input: _CreatePersonInput!) {
+  packet {
+    createPerson(input: $input) {
+      ...PersonAttributes
+    }
+  }
+}
+
+mutation updatePerson($input: _UpdatePersonInput!) {
+  packet {
+    updatePerson(input: $input) {
+      ...PersonAttributes
+    }
+  }
+}
+
+mutation deletePerson($id: ID!) {
+  packet {
+    deletePerson(id: $id)
+  }
+}
