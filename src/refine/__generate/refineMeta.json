@@ -1,0 +1,395 @@
+{
+  "resources": [
+    {
+      "name": "Clinic",
+      "aggregate": "Clinic",
+      "kind": "standard",
+      "operations": {
+        "list": "searchClinic",
+        "getOne": "getForUpdateClinic",
+        "create": "createClinic",
+        "update": "updateClinic",
+        "deleteOne": "deleteClinic"
+      },
+      "fields": [
+        {
+          "name": "address.city",
+          "type": "String",
+          "required": false,
+          "isReference": false
+        },
+        {
+          "name": "address.flatNo",
+          "type": "String",
+          "required": false,
+          "isReference": false
+        },
+        {
+          "name": "address.street",
+          "type": "String",
+          "required": false,
+          "isReference": false
+        },
+        {
+          "name": "name",
+          "type": "String",
+          "required": false,
+          "isReference": false
+        },
+        {
+          "name": "id",
+          "type": "ID",
+          "required": true,
+          "isReference": false
+        }
+      ]
+    },
+    {
+      "name": "ClinicCustomer",
+      "aggregate": "Clinic",
+      "kind": "standard",
+      "operations": {
+        "list": "searchClinicCustomer",
+        "getOne": "getForUpdateClinicCustomer",
+        "create": "createClinicCustomer",
+        "update": "updateClinicCustomer",
+        "deleteOne": "deleteClinicCustomer"
+      },
+      "fields": [
+        {
+          "name": "clinic",
+          "type": "ID",
+          "required": true,
+          "isReference": true,
+          "referenceResource": "Clinic"
+        },
+        {
+          "name": "customer.entityId",
+          "type": "String",
+          "required": false,
+          "isReference": true,
+          "referenceResource": "Customer"
+        },
+        {
+          "name": "id",
+          "type": "ID",
+          "required": true,
+          "isReference": false
+        }
+      ]
+    },
+    {
+      "name": "ClinicDoctor",
+      "aggregate": "Clinic",
+      "kind": "standard",
+      "operations": {
+        "list": "searchClinicDoctor",
+        "getOne": "getForUpdateClinicDoctor",
+        "create": "createClinicDoctor",
+        "update": "updateClinicDoctor",
+        "deleteOne": "deleteClinicDoctor"
+      },
+      "fields": [
+        {
+          "name": "clinic",
+          "type": "ID",
+          "required": true,
+          "isReference": true,
+          "referenceResource": "Clinic"
+        },
+        {
+          "name": "doctor.entityId",
+          "type": "String",
+          "required": false,
+          "isReference": true,
+          "referenceResource": "Doctor"
+        },
+        {
+          "name": "id",
+          "type": "ID",
+          "required": true,
+          "isReference": false
+        }
+      ]
+    },
+    {
+      "name": "ClinicDoctorAvailability",
+      "aggregate": "Clinic",
+      "kind": "standard",
+      "operations": {
+        "list": "searchClinicDoctorAvailability",
+        "getOne": "getForUpdateClinicDoctorAvailability",
+        "create": "createClinicDoctorAvailability",
+        "update": "updateClinicDoctorAvailability",
+        "deleteOne": "deleteClinicDoctorAvailability"
+      },
+      "fields": [
+        {
+          "name": "clinicDoctor",
+          "type": "ID",
+          "required": true,
+          "isReference": true,
+          "referenceResource": "ClinicDoctor"
+        },
+        {
+          "name": "clinicOffice",
+          "type": "ID",
+          "required": true,
+          "isReference": true,
+          "referenceResource": "ClinicOffice"
+        },
+        {
+          "name": "beginDate",
+          "type": "_DateTime",
+          "required": false,
+          "isReference": false
+        },
+        {
+          "name": "endDate",
+          "type": "_DateTime",
+          "required": false,
+          "isReference": false
+        },
+        {
+          "name": "id",
+          "type": "ID",
+          "required": true,
+          "isReference": false
+        }
+      ]
+    },
+    {
+      "name": "ClinicDoctorTable",
+      "aggregate": "Clinic",
+      "kind": "standard",
+      "operations": {
+        "list": "searchClinicDoctorTable",
+        "getOne": "getForUpdateClinicDoctorTable",
+        "create": "createClinicDoctorTable",
+        "update": "updateClinicDoctorTable",
+        "deleteOne": "deleteClinicDoctorTable"
+      },
+      "fields": [
+        {
+          "name": "clinicCustomer",
+          "type": "ID",
+          "required": true,
+          "isReference": true,
+          "referenceResource": "ClinicCustomer"
+        },
+        {
+          "name": "clinicDoctorAvailability",
+          "type": "ID",
+          "required": true,
+          "isReference": true,
+          "referenceResource": "ClinicDoctorAvailability"
+        },
+        {
+          "name": "comment",
+          "type": "String",
+          "required": false,
+          "isReference": false
+        },
+        {
+          "name": "beginDate",
+          "type": "_DateTime",
+          "required": false,
+          "isReference": false
+        },
+        {
+          "name": "endDate",
+          "type": "_DateTime",
+          "required": false,
+          "isReference": false
+        },
+        {
+          "name": "id",
+          "type": "ID",
+          "required": true,
+          "isReference": false
+        }
+      ]
+    },
+    {
+      "name": "ClinicOffice",
+      "aggregate": "Clinic",
+      "kind": "standard",
+      "operations": {
+        "list": "searchClinicOffice",
+        "getOne": "getForUpdateClinicOffice",
+        "create": "createClinicOffice",
+        "update": "updateClinicOffice",
+        "deleteOne": "deleteClinicOffice"
+      },
+      "fields": [
+        {
+          "name": "clinic",
+          "type": "ID",
+          "required": true,
+          "isReference": true,
+          "referenceResource": "Clinic"
+        },
+        {
+          "name": "officeNum",
+          "type": "String",
+          "required": false,
+          "isReference": false
+        },
+        {
+          "name": "id",
+          "type": "ID",
+          "required": true,
+          "isReference": false
+        }
+      ]
+    },
+    {
+      "name": "Customer",
+      "aggregate": "Customer",
+      "kind": "standard",
+      "operations": {
+        "list": "searchCustomer",
+        "getOne": "getForUpdateCustomer",
+        "create": "createCustomer",
+        "update": "updateCustomer",
+        "deleteOne": "deleteCustomer"
+      },
+      "fields": [
+        {
+          "name": "insuranceNum",
+          "type": "String",
+          "required": false,
+          "isReference": false
+        },
+        {
+          "name": "person.entityId",
+          "type": "String",
+          "required": false,
+          "isReference": true,
+          "referenceResource": "Person"
+        },
+        {
+          "name": "id",
+          "type": "ID",
+          "required": true,
+          "isReference": false
+        }
+      ]
+    },
+    {
+      "name": "Doctor",
+      "aggregate": "Doctor",
+      "kind": "standard",
+      "operations": {
+        "list": "searchDoctor",
+        "getOne": "getForUpdateDoctor",
+        "create": "createDoctor",
+        "update": "updateDoctor",
+        "deleteOne": "deleteDoctor"
+      },
+      "fields": [
+        {
+          "name": "doctorType",
+          "type": "ID",
+          "required": true,
+          "isReference": true,
+          "referenceResource": "DoctorType"
+        },
+        {
+          "name": "person.entityId",
+          "type": "String",
+          "required": false,
+          "isReference": true,
+          "referenceResource": "Person"
+        },
+        {
+          "name": "id",
+          "type": "ID",
+          "required": true,
+          "isReference": false
+        }
+      ]
+    },
+    {
+      "name": "Person",
+      "aggregate": "Person",
+      "kind": "standard",
+      "operations": {
+        "list": "searchPerson",
+        "getOne": "getForUpdatePerson",
+        "create": "createPerson",
+        "update": "updatePerson",
+        "deleteOne": "deletePerson"
+      },
+      "fields": [
+        {
+          "name": "id",
+          "type": "ID",
+          "required": true,
+          "isReference": false
+        },
+        {
+          "name": "birthDate",
+          "type": "_Date",
+          "required": false,
+          "isReference": false
+        },
+        {
+          "name": "firstName",
+          "type": "String",
+          "required": false,
+          "isReference": false
+        },
+        {
+          "name": "lastName",
+          "type": "String",
+          "required": false,
+          "isReference": false
+        },
+        {
+          "name": "sex",
+          "type": "_EN_Sex",
+          "required": false,
+          "isReference": false
+        }
+      ]
+    },
+    {
+      "name": "DoctorType",
+      "aggregate": "RootDictionary",
+      "kind": "dictionary",
+      "operations": {
+        "list": "searchDoctorType",
+        "getOne": "getForUpdateDoctorType",
+        "upsert": "updateOrCreateDoctorType"
+      },
+      "fields": [
+        {
+          "name": "id",
+          "type": "ID",
+          "required": true,
+          "isReference": false
+        },
+        {
+          "name": "descr",
+          "type": "String",
+          "required": false,
+          "isReference": false
+        },
+        {
+          "name": "name",
+          "type": "String",
+          "required": false,
+          "isReference": false
+        }
+      ]
+    },
+    {
+      "name": "schema",
+      "aggregate": "graphql",
+      "kind": "standard",
+      "operations": {},
+      "fields": []
+    }
+  ]
+}

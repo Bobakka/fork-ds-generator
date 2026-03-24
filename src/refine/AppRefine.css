@@ -1,0 +1,58 @@
+.app-shell-header {
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.app-shell-brand {
+  color: #fff;
+  margin-right: 24px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+.app-shell-content {
+  padding: 24px;
+  display: flex;
+  justify-content: center;
+  background: #f5f7fb;
+}
+
+.page-wrap {
+  width: 100%;
+  max-width: 1080px;
+}
+
+.page-header-row {
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.page-subtitle {
+  color: #7f8ea3;
+}
+
+.grid-card {
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(20, 40, 80, 0.06);
+}
+
+.form-card {
+  max-width: 680px;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(20, 40, 80, 0.06);
+}
+
+.form-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.entity-title {
+  margin-bottom: 4px !important;
+}
+

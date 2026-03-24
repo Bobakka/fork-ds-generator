@@ -1,0 +1,2365 @@
+{
+  "aggList": [
+    {
+      "aggName": "Clinic",
+      "entityList": [
+        {
+          "name": "Clinic",
+          "queryList": [
+            {
+              "queryAlias": "searchClinic",
+              "queryName": "searchClinic",
+              "queryType": "_E_Clinic",
+              "fieldList": [
+                {
+                  "fieldAlias": "id",
+                  "fieldName": "id",
+                  "fieldPath": "id",
+                  "fieldType": "ID"
+                },
+                {
+                  "fieldAlias": "address",
+                  "fieldName": "address",
+                  "fieldPath": "address",
+                  "fieldType": [
+                    {
+                      "fieldAlias": "city",
+                      "fieldName": "city",
+                      "fieldPath": "city",
+                      "fieldType": "String"
+                    },
+                    {
+                      "fieldAlias": "flatNo",
+                      "fieldName": "flatNo",
+                      "fieldPath": "flatNo",
+                      "fieldType": "String"
+                    },
+                    {
+                      "fieldAlias": "street",
+                      "fieldName": "street",
+                      "fieldPath": "street",
+                      "fieldType": "String"
+                    }
+                  ]
+                },
+                {
+                  "fieldAlias": "name",
+                  "fieldName": "name",
+                  "fieldPath": "name",
+                  "fieldType": "String"
+                }
+              ]
+            }
+          ],
+          "mutationList": [
+            {
+              "mutationAlias": "getForUpdateClinic",
+              "mutationName": "getForUpdateClinic",
+              "mutationType": "ON_INSTANCE",
+              "inputList": [
+                {
+                  "inputName": "id",
+                  "inputPath": "",
+                  "inputRefTypeName": {
+                    "refAggName": "",
+                    "refEntityName": ""
+                  },
+                  "inputType": "ID"
+                }
+              ],
+              "getQueryFieldList": []
+            },
+            {
+              "mutationAlias": "createClinic",
+              "mutationName": "createClinic",
+              "mutationType": "SIMPLE",
+              "inputList": [
+                {
+                  "inputName": "input",
+                  "inputPath": "",
+                  "inputRefTypeName": {
+                    "refAggName": "",
+                    "refEntityName": ""
+                  },
+                  "inputType": [
+                    {
+                      "inputName": "address",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": "_G_Address"
+                      },
+                      "inputType": [
+                        {
+                          "inputName": "city",
+                          "inputPath": "",
+                          "inputRefTypeName": {
+                            "refAggName": "",
+                            "refEntityName": ""
+                          },
+                          "inputType": "String"
+                        },
+                        {
+                          "inputName": "flatNo",
+                          "inputPath": "",
+                          "inputRefTypeName": {
+                            "refAggName": "",
+                            "refEntityName": ""
+                          },
+                          "inputType": "String"
+                        },
+                        {
+                          "inputName": "street",
+                          "inputPath": "",
+                          "inputRefTypeName": {
+                            "refAggName": "",
+                            "refEntityName": ""
+                          },
+                          "inputType": "String"
+                        }
+                      ]
+                    },
+                    {
+                      "inputName": "name",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": "String"
+                      },
+                      "inputType": "String"
+                    },
+                    {
+                      "inputName": "_expr",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": ""
+                      },
+                      "inputType": []
+                    }
+                  ]
+                }
+              ],
+              "getQueryFieldList": []
+            },
+            {
+              "mutationAlias": "updateClinic",
+              "mutationName": "updateClinic",
+              "mutationType": "ON_INSTANCE",
+              "inputList": [
+                {
+                  "inputName": "input",
+                  "inputPath": "",
+                  "inputRefTypeName": {
+                    "refAggName": "",
+                    "refEntityName": ""
+                  },
+                  "inputType": [
+                    {
+                      "inputName": "id",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": "ID"
+                      },
+                      "inputType": "ID"
+                    },
+                    {
+                      "inputName": "address",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": "_G_Address"
+                      },
+                      "inputType": [
+                        {
+                          "inputName": "city",
+                          "inputPath": "",
+                          "inputRefTypeName": {
+                            "refAggName": "",
+                            "refEntityName": ""
+                          },
+                          "inputType": "String"
+                        },
+                        {
+                          "inputName": "flatNo",
+                          "inputPath": "",
+                          "inputRefTypeName": {
+                            "refAggName": "",
+                            "refEntityName": ""
+                          },
+                          "inputType": "String"
+                        },
+                        {
+                          "inputName": "street",
+                          "inputPath": "",
+                          "inputRefTypeName": {
+                            "refAggName": "",
+                            "refEntityName": ""
+                          },
+                          "inputType": "String"
+                        }
+                      ]
+                    },
+                    {
+                      "inputName": "name",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": "String"
+                      },
+                      "inputType": "String"
+                    },
+                    {
+                      "inputName": "_expr",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": ""
+                      },
+                      "inputType": []
+                    }
+                  ]
+                }
+              ],
+              "getQueryFieldList": [
+                {
+                  "fieldAlias": "id",
+                  "fieldName": "id",
+                  "fieldPath": "id",
+                  "fieldType": "ID"
+                },
+                {
+                  "fieldAlias": "address",
+                  "fieldName": "address",
+                  "fieldPath": "address",
+                  "fieldType": [
+                    {
+                      "fieldAlias": "city",
+                      "fieldName": "city",
+                      "fieldPath": "city",
+                      "fieldType": "String"
+                    },
+                    {
+                      "fieldAlias": "flatNo",
+                      "fieldName": "flatNo",
+                      "fieldPath": "flatNo",
+                      "fieldType": "String"
+                    },
+                    {
+                      "fieldAlias": "street",
+                      "fieldName": "street",
+                      "fieldPath": "street",
+                      "fieldType": "String"
+                    }
+                  ]
+                },
+                {
+                  "fieldAlias": "name",
+                  "fieldName": "name",
+                  "fieldPath": "name",
+                  "fieldType": "String"
+                }
+              ]
+            },
+            {
+              "mutationAlias": "deleteClinic",
+              "mutationName": "deleteClinic",
+              "mutationType": "ON_INSTANCE",
+              "inputList": [
+                {
+                  "inputName": "id",
+                  "inputPath": "",
+                  "inputRefTypeName": {
+                    "refAggName": "",
+                    "refEntityName": ""
+                  },
+                  "inputType": "ID"
+                }
+              ],
+              "getQueryFieldList": []
+            }
+          ],
+          "childEntityRefList": [
+            {
+              "isCollection": true,
+              "fieldType": "ClinicCustomer",
+              "fieldName": "clinicCustomerList",
+              "backRefereceAttributeName": "clinic"
+            },
+            {
+              "isCollection": true,
+              "fieldType": "ClinicDoctor",
+              "fieldName": "clinicDoctorList",
+              "backRefereceAttributeName": "clinic"
+            },
+            {
+              "isCollection": true,
+              "fieldType": "ClinicOffice",
+              "fieldName": "clinicOfficeList",
+              "backRefereceAttributeName": "clinic"
+            }
+          ]
+        },
+        {
+          "name": "ClinicCustomer",
+          "queryList": [
+            {
+              "queryAlias": "searchClinicCustomer",
+              "queryName": "searchClinicCustomer",
+              "queryType": "_E_ClinicCustomer",
+              "fieldList": [
+                {
+                  "fieldAlias": "id",
+                  "fieldName": "id",
+                  "fieldPath": "id",
+                  "fieldType": "ID"
+                },
+                {
+                  "fieldAlias": "aggregateRoot",
+                  "fieldName": "aggregateRoot",
+                  "fieldPath": "aggregateRoot",
+                  "fieldType": "Clinic"
+                },
+                {
+                  "fieldAlias": "clinic",
+                  "fieldName": "clinic",
+                  "fieldPath": "clinic",
+                  "fieldType": "Clinic"
+                },
+                {
+                  "fieldAlias": "customer",
+                  "fieldName": "customer",
+                  "fieldPath": "customer",
+                  "fieldType": [
+                    {
+                      "fieldAlias": "entityId",
+                      "fieldName": "entityId",
+                      "fieldPath": "entityId",
+                      "fieldType": "_G_CustomerReference"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "mutationList": [
+            {
+              "mutationAlias": "getForUpdateClinicCustomer",
+              "mutationName": "getForUpdateClinicCustomer",
+              "mutationType": "ON_INSTANCE",
+              "inputList": [
+                {
+                  "inputName": "id",
+                  "inputPath": "",
+                  "inputRefTypeName": {
+                    "refAggName": "",
+                    "refEntityName": ""
+                  },
+                  "inputType": "ID"
+                }
+              ],
+              "getQueryFieldList": []
+            },
+            {
+              "mutationAlias": "createClinicCustomer",
+              "mutationName": "createClinicCustomer",
+              "mutationType": "SIMPLE",
+              "inputList": [
+                {
+                  "inputName": "input",
+                  "inputPath": "",
+                  "inputRefTypeName": {
+                    "refAggName": "",
+                    "refEntityName": ""
+                  },
+                  "inputType": [
+                    {
+                      "inputName": "clinic",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "Clinic",
+                        "refEntityName": "Clinic"
+                      },
+                      "inputType": "ID"
+                    },
+                    {
+                      "inputName": "customer",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "Customer",
+                        "refEntityName": "_G_CustomerReference"
+                      },
+                      "inputType": [
+                        {
+                          "inputName": "entityId",
+                          "inputPath": "",
+                          "inputRefTypeName": {
+                            "refAggName": "",
+                            "refEntityName": ""
+                          },
+                          "inputType": "String"
+                        }
+                      ]
+                    },
+                    {
+                      "inputName": "_expr",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": ""
+                      },
+                      "inputType": []
+                    }
+                  ]
+                }
+              ],
+              "getQueryFieldList": []
+            },
+            {
+              "mutationAlias": "updateClinicCustomer",
+              "mutationName": "updateClinicCustomer",
+              "mutationType": "ON_INSTANCE",
+              "inputList": [
+                {
+                  "inputName": "input",
+                  "inputPath": "",
+                  "inputRefTypeName": {
+                    "refAggName": "",
+                    "refEntityName": ""
+                  },
+                  "inputType": [
+                    {
+                      "inputName": "id",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": "ID"
+                      },
+                      "inputType": "ID"
+                    },
+                    {
+                      "inputName": "clinic",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "Clinic",
+                        "refEntityName": "Clinic"
+                      },
+                      "inputType": "ID"
+                    },
+                    {
+                      "inputName": "customer",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "Customer",
+                        "refEntityName": "_G_CustomerReference"
+                      },
+                      "inputType": [
+                        {
+                          "inputName": "entityId",
+                          "inputPath": "",
+                          "inputRefTypeName": {
+                            "refAggName": "",
+                            "refEntityName": ""
+                          },
+                          "inputType": "String"
+                        }
+                      ]
+                    },
+                    {
+                      "inputName": "_expr",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": ""
+                      },
+                      "inputType": []
+                    }
+                  ]
+                }
+              ],
+              "getQueryFieldList": [
+                {
+                  "fieldAlias": "id",
+                  "fieldName": "id",
+                  "fieldPath": "id",
+                  "fieldType": "ID"
+                },
+                {
+                  "fieldAlias": "aggregateRoot",
+                  "fieldName": "aggregateRoot",
+                  "fieldPath": "aggregateRoot",
+                  "fieldType": "Clinic"
+                },
+                {
+                  "fieldAlias": "clinic",
+                  "fieldName": "clinic",
+                  "fieldPath": "clinic",
+                  "fieldType": "Clinic"
+                },
+                {
+                  "fieldAlias": "customer",
+                  "fieldName": "customer",
+                  "fieldPath": "customer",
+                  "fieldType": [
+                    {
+                      "fieldAlias": "entityId",
+                      "fieldName": "entityId",
+                      "fieldPath": "entityId",
+                      "fieldType": "_G_CustomerReference"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "mutationAlias": "deleteClinicCustomer",
+              "mutationName": "deleteClinicCustomer",
+              "mutationType": "ON_INSTANCE",
+              "inputList": [
+                {
+                  "inputName": "id",
+                  "inputPath": "",
+                  "inputRefTypeName": {
+                    "refAggName": "",
+                    "refEntityName": ""
+                  },
+                  "inputType": "ID"
+                }
+              ],
+              "getQueryFieldList": []
+            }
+          ],
+          "childEntityRefList": [
+            {
+              "isCollection": true,
+              "fieldType": "ClinicDoctorTable",
+              "fieldName": "clinicCustomerTableLost",
+              "backRefereceAttributeName": "clinicCustomer"
+            }
+          ]
+        },
+        {
+          "name": "ClinicDoctor",
+          "queryList": [
+            {
+              "queryAlias": "searchClinicDoctor",
+              "queryName": "searchClinicDoctor",
+              "queryType": "_E_ClinicDoctor",
+              "fieldList": [
+                {
+                  "fieldAlias": "id",
+                  "fieldName": "id",
+                  "fieldPath": "id",
+                  "fieldType": "ID"
+                },
+                {
+                  "fieldAlias": "aggregateRoot",
+                  "fieldName": "aggregateRoot",
+                  "fieldPath": "aggregateRoot",
+                  "fieldType": "Clinic"
+                },
+                {
+                  "fieldAlias": "clinic",
+                  "fieldName": "clinic",
+                  "fieldPath": "clinic",
+                  "fieldType": "Clinic"
+                },
+                {
+                  "fieldAlias": "doctor",
+                  "fieldName": "doctor",
+                  "fieldPath": "doctor",
+                  "fieldType": [
+                    {
+                      "fieldAlias": "entityId",
+                      "fieldName": "entityId",
+                      "fieldPath": "entityId",
+                      "fieldType": "_G_DoctorReference"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "mutationList": [
+            {
+              "mutationAlias": "getForUpdateClinicDoctor",
+              "mutationName": "getForUpdateClinicDoctor",
+              "mutationType": "ON_INSTANCE",
+              "inputList": [
+                {
+                  "inputName": "id",
+                  "inputPath": "",
+                  "inputRefTypeName": {
+                    "refAggName": "",
+                    "refEntityName": ""
+                  },
+                  "inputType": "ID"
+                }
+              ],
+              "getQueryFieldList": []
+            },
+            {
+              "mutationAlias": "createClinicDoctor",
+              "mutationName": "createClinicDoctor",
+              "mutationType": "SIMPLE",
+              "inputList": [
+                {
+                  "inputName": "input",
+                  "inputPath": "",
+                  "inputRefTypeName": {
+                    "refAggName": "",
+                    "refEntityName": ""
+                  },
+                  "inputType": [
+                    {
+                      "inputName": "clinic",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "Clinic",
+                        "refEntityName": "Clinic"
+                      },
+                      "inputType": "ID"
+                    },
+                    {
+                      "inputName": "doctor",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "Doctor",
+                        "refEntityName": "_G_DoctorReference"
+                      },
+                      "inputType": [
+                        {
+                          "inputName": "entityId",
+                          "inputPath": "",
+                          "inputRefTypeName": {
+                            "refAggName": "",
+                            "refEntityName": ""
+                          },
+                          "inputType": "String"
+                        }
+                      ]
+                    },
+                    {
+                      "inputName": "_expr",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": ""
+                      },
+                      "inputType": []
+                    }
+                  ]
+                }
+              ],
+              "getQueryFieldList": []
+            },
+            {
+              "mutationAlias": "updateClinicDoctor",
+              "mutationName": "updateClinicDoctor",
+              "mutationType": "ON_INSTANCE",
+              "inputList": [
+                {
+                  "inputName": "input",
+                  "inputPath": "",
+                  "inputRefTypeName": {
+                    "refAggName": "",
+                    "refEntityName": ""
+                  },
+                  "inputType": [
+                    {
+                      "inputName": "id",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": "ID"
+                      },
+                      "inputType": "ID"
+                    },
+                    {
+                      "inputName": "clinic",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "Clinic",
+                        "refEntityName": "Clinic"
+                      },
+                      "inputType": "ID"
+                    },
+                    {
+                      "inputName": "doctor",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "Doctor",
+                        "refEntityName": "_G_DoctorReference"
+                      },
+                      "inputType": [
+                        {
+                          "inputName": "entityId",
+                          "inputPath": "",
+                          "inputRefTypeName": {
+                            "refAggName": "",
+                            "refEntityName": ""
+                          },
+                          "inputType": "String"
+                        }
+                      ]
+                    },
+                    {
+                      "inputName": "_expr",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": ""
+                      },
+                      "inputType": []
+                    }
+                  ]
+                }
+              ],
+              "getQueryFieldList": [
+                {
+                  "fieldAlias": "id",
+                  "fieldName": "id",
+                  "fieldPath": "id",
+                  "fieldType": "ID"
+                },
+                {
+                  "fieldAlias": "aggregateRoot",
+                  "fieldName": "aggregateRoot",
+                  "fieldPath": "aggregateRoot",
+                  "fieldType": "Clinic"
+                },
+                {
+                  "fieldAlias": "clinic",
+                  "fieldName": "clinic",
+                  "fieldPath": "clinic",
+                  "fieldType": "Clinic"
+                },
+                {
+                  "fieldAlias": "doctor",
+                  "fieldName": "doctor",
+                  "fieldPath": "doctor",
+                  "fieldType": [
+                    {
+                      "fieldAlias": "entityId",
+                      "fieldName": "entityId",
+                      "fieldPath": "entityId",
+                      "fieldType": "_G_DoctorReference"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "mutationAlias": "deleteClinicDoctor",
+              "mutationName": "deleteClinicDoctor",
+              "mutationType": "ON_INSTANCE",
+              "inputList": [
+                {
+                  "inputName": "id",
+                  "inputPath": "",
+                  "inputRefTypeName": {
+                    "refAggName": "",
+                    "refEntityName": ""
+                  },
+                  "inputType": "ID"
+                }
+              ],
+              "getQueryFieldList": []
+            }
+          ],
+          "childEntityRefList": [
+            {
+              "isCollection": true,
+              "fieldType": "ClinicDoctorAvailability",
+              "fieldName": "clinicDoctorAvailabilityList",
+              "backRefereceAttributeName": "clinicDoctor"
+            }
+          ]
+        },
+        {
+          "name": "ClinicDoctorAvailability",
+          "queryList": [
+            {
+              "queryAlias": "searchClinicDoctorAvailability",
+              "queryName": "searchClinicDoctorAvailability",
+              "queryType": "_E_ClinicDoctorAvailability",
+              "fieldList": [
+                {
+                  "fieldAlias": "id",
+                  "fieldName": "id",
+                  "fieldPath": "id",
+                  "fieldType": "ID"
+                },
+                {
+                  "fieldAlias": "aggregateRoot",
+                  "fieldName": "aggregateRoot",
+                  "fieldPath": "aggregateRoot",
+                  "fieldType": "Clinic"
+                },
+                {
+                  "fieldAlias": "beginDate",
+                  "fieldName": "beginDate",
+                  "fieldPath": "beginDate",
+                  "fieldType": "_DateTime"
+                },
+                {
+                  "fieldAlias": "clinicDoctor",
+                  "fieldName": "clinicDoctor",
+                  "fieldPath": "clinicDoctor",
+                  "fieldType": "ClinicDoctor"
+                },
+                {
+                  "fieldAlias": "clinicOffice",
+                  "fieldName": "clinicOffice",
+                  "fieldPath": "clinicOffice",
+                  "fieldType": "ClinicOffice"
+                },
+                {
+                  "fieldAlias": "endDate",
+                  "fieldName": "endDate",
+                  "fieldPath": "endDate",
+                  "fieldType": "_DateTime"
+                }
+              ]
+            }
+          ],
+          "mutationList": [
+            {
+              "mutationAlias": "getForUpdateClinicDoctorAvailability",
+              "mutationName": "getForUpdateClinicDoctorAvailability",
+              "mutationType": "ON_INSTANCE",
+              "inputList": [
+                {
+                  "inputName": "id",
+                  "inputPath": "",
+                  "inputRefTypeName": {
+                    "refAggName": "",
+                    "refEntityName": ""
+                  },
+                  "inputType": "ID"
+                }
+              ],
+              "getQueryFieldList": []
+            },
+            {
+              "mutationAlias": "createClinicDoctorAvailability",
+              "mutationName": "createClinicDoctorAvailability",
+              "mutationType": "SIMPLE",
+              "inputList": [
+                {
+                  "inputName": "input",
+                  "inputPath": "",
+                  "inputRefTypeName": {
+                    "refAggName": "",
+                    "refEntityName": ""
+                  },
+                  "inputType": [
+                    {
+                      "inputName": "clinicDoctor",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "Clinic",
+                        "refEntityName": "ClinicDoctor"
+                      },
+                      "inputType": "ID"
+                    },
+                    {
+                      "inputName": "clinicOffice",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "Clinic",
+                        "refEntityName": "ClinicOffice"
+                      },
+                      "inputType": "ID"
+                    },
+                    {
+                      "inputName": "beginDate",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": "_DateTime"
+                      },
+                      "inputType": "_DateTime"
+                    },
+                    {
+                      "inputName": "endDate",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": "_DateTime"
+                      },
+                      "inputType": "_DateTime"
+                    },
+                    {
+                      "inputName": "_expr",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": ""
+                      },
+                      "inputType": []
+                    }
+                  ]
+                }
+              ],
+              "getQueryFieldList": []
+            },
+            {
+              "mutationAlias": "updateClinicDoctorAvailability",
+              "mutationName": "updateClinicDoctorAvailability",
+              "mutationType": "ON_INSTANCE",
+              "inputList": [
+                {
+                  "inputName": "input",
+                  "inputPath": "",
+                  "inputRefTypeName": {
+                    "refAggName": "",
+                    "refEntityName": ""
+                  },
+                  "inputType": [
+                    {
+                      "inputName": "id",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": "ID"
+                      },
+                      "inputType": "ID"
+                    },
+                    {
+                      "inputName": "clinicDoctor",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "Clinic",
+                        "refEntityName": "ClinicDoctor"
+                      },
+                      "inputType": "ID"
+                    },
+                    {
+                      "inputName": "clinicOffice",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "Clinic",
+                        "refEntityName": "ClinicOffice"
+                      },
+                      "inputType": "ID"
+                    },
+                    {
+                      "inputName": "beginDate",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": "_DateTime"
+                      },
+                      "inputType": "_DateTime"
+                    },
+                    {
+                      "inputName": "endDate",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": "_DateTime"
+                      },
+                      "inputType": "_DateTime"
+                    },
+                    {
+                      "inputName": "_expr",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": ""
+                      },
+                      "inputType": []
+                    }
+                  ]
+                }
+              ],
+              "getQueryFieldList": [
+                {
+                  "fieldAlias": "id",
+                  "fieldName": "id",
+                  "fieldPath": "id",
+                  "fieldType": "ID"
+                },
+                {
+                  "fieldAlias": "aggregateRoot",
+                  "fieldName": "aggregateRoot",
+                  "fieldPath": "aggregateRoot",
+                  "fieldType": "Clinic"
+                },
+                {
+                  "fieldAlias": "beginDate",
+                  "fieldName": "beginDate",
+                  "fieldPath": "beginDate",
+                  "fieldType": "_DateTime"
+                },
+                {
+                  "fieldAlias": "clinicDoctor",
+                  "fieldName": "clinicDoctor",
+                  "fieldPath": "clinicDoctor",
+                  "fieldType": "ClinicDoctor"
+                },
+                {
+                  "fieldAlias": "clinicOffice",
+                  "fieldName": "clinicOffice",
+                  "fieldPath": "clinicOffice",
+                  "fieldType": "ClinicOffice"
+                },
+                {
+                  "fieldAlias": "endDate",
+                  "fieldName": "endDate",
+                  "fieldPath": "endDate",
+                  "fieldType": "_DateTime"
+                }
+              ]
+            },
+            {
+              "mutationAlias": "deleteClinicDoctorAvailability",
+              "mutationName": "deleteClinicDoctorAvailability",
+              "mutationType": "ON_INSTANCE",
+              "inputList": [
+                {
+                  "inputName": "id",
+                  "inputPath": "",
+                  "inputRefTypeName": {
+                    "refAggName": "",
+                    "refEntityName": ""
+                  },
+                  "inputType": "ID"
+                }
+              ],
+              "getQueryFieldList": []
+            }
+          ],
+          "childEntityRefList": [
+            {
+              "isCollection": true,
+              "fieldType": "ClinicDoctorTable",
+              "fieldName": "clinicDoctorTableList",
+              "backRefereceAttributeName": "clinicDoctorAvailability"
+            }
+          ]
+        },
+        {
+          "name": "ClinicDoctorTable",
+          "queryList": [
+            {
+              "queryAlias": "searchClinicDoctorTable",
+              "queryName": "searchClinicDoctorTable",
+              "queryType": "_E_ClinicDoctorTable",
+              "fieldList": [
+                {
+                  "fieldAlias": "id",
+                  "fieldName": "id",
+                  "fieldPath": "id",
+                  "fieldType": "ID"
+                },
+                {
+                  "fieldAlias": "aggregateRoot",
+                  "fieldName": "aggregateRoot",
+                  "fieldPath": "aggregateRoot",
+                  "fieldType": "Clinic"
+                },
+                {
+                  "fieldAlias": "beginDate",
+                  "fieldName": "beginDate",
+                  "fieldPath": "beginDate",
+                  "fieldType": "_DateTime"
+                },
+                {
+                  "fieldAlias": "clinicCustomer",
+                  "fieldName": "clinicCustomer",
+                  "fieldPath": "clinicCustomer",
+                  "fieldType": "ClinicCustomer"
+                },
+                {
+                  "fieldAlias": "clinicDoctorAvailability",
+                  "fieldName": "clinicDoctorAvailability",
+                  "fieldPath": "clinicDoctorAvailability",
+                  "fieldType": "ClinicDoctorAvailability"
+                },
+                {
+                  "fieldAlias": "comment",
+                  "fieldName": "comment",
+                  "fieldPath": "comment",
+                  "fieldType": "String"
+                },
+                {
+                  "fieldAlias": "endDate",
+                  "fieldName": "endDate",
+                  "fieldPath": "endDate",
+                  "fieldType": "_DateTime"
+                }
+              ]
+            }
+          ],
+          "mutationList": [
+            {
+              "mutationAlias": "getForUpdateClinicDoctorTable",
+              "mutationName": "getForUpdateClinicDoctorTable",
+              "mutationType": "ON_INSTANCE",
+              "inputList": [
+                {
+                  "inputName": "id",
+                  "inputPath": "",
+                  "inputRefTypeName": {
+                    "refAggName": "",
+                    "refEntityName": ""
+                  },
+                  "inputType": "ID"
+                }
+              ],
+              "getQueryFieldList": []
+            },
+            {
+              "mutationAlias": "createClinicDoctorTable",
+              "mutationName": "createClinicDoctorTable",
+              "mutationType": "SIMPLE",
+              "inputList": [
+                {
+                  "inputName": "input",
+                  "inputPath": "",
+                  "inputRefTypeName": {
+                    "refAggName": "",
+                    "refEntityName": ""
+                  },
+                  "inputType": [
+                    {
+                      "inputName": "clinicCustomer",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "Clinic",
+                        "refEntityName": "ClinicCustomer"
+                      },
+                      "inputType": "ID"
+                    },
+                    {
+                      "inputName": "clinicDoctorAvailability",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "Clinic",
+                        "refEntityName": "ClinicDoctorAvailability"
+                      },
+                      "inputType": "ID"
+                    },
+                    {
+                      "inputName": "comment",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": "String"
+                      },
+                      "inputType": "String"
+                    },
+                    {
+                      "inputName": "beginDate",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": "_DateTime"
+                      },
+                      "inputType": "_DateTime"
+                    },
+                    {
+                      "inputName": "endDate",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": "_DateTime"
+                      },
+                      "inputType": "_DateTime"
+                    },
+                    {
+                      "inputName": "_expr",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": ""
+                      },
+                      "inputType": []
+                    }
+                  ]
+                }
+              ],
+              "getQueryFieldList": []
+            },
+            {
+              "mutationAlias": "updateClinicDoctorTable",
+              "mutationName": "updateClinicDoctorTable",
+              "mutationType": "ON_INSTANCE",
+              "inputList": [
+                {
+                  "inputName": "input",
+                  "inputPath": "",
+                  "inputRefTypeName": {
+                    "refAggName": "",
+                    "refEntityName": ""
+                  },
+                  "inputType": [
+                    {
+                      "inputName": "id",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": "ID"
+                      },
+                      "inputType": "ID"
+                    },
+                    {
+                      "inputName": "clinicCustomer",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "Clinic",
+                        "refEntityName": "ClinicCustomer"
+                      },
+                      "inputType": "ID"
+                    },
+                    {
+                      "inputName": "clinicDoctorAvailability",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "Clinic",
+                        "refEntityName": "ClinicDoctorAvailability"
+                      },
+                      "inputType": "ID"
+                    },
+                    {
+                      "inputName": "comment",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": "String"
+                      },
+                      "inputType": "String"
+                    },
+                    {
+                      "inputName": "beginDate",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": "_DateTime"
+                      },
+                      "inputType": "_DateTime"
+                    },
+                    {
+                      "inputName": "endDate",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": "_DateTime"
+                      },
+                      "inputType": "_DateTime"
+                    },
+                    {
+                      "inputName": "_expr",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": ""
+                      },
+                      "inputType": []
+                    }
+                  ]
+                }
+              ],
+              "getQueryFieldList": [
+                {
+                  "fieldAlias": "id",
+                  "fieldName": "id",
+                  "fieldPath": "id",
+                  "fieldType": "ID"
+                },
+                {
+                  "fieldAlias": "aggregateRoot",
+                  "fieldName": "aggregateRoot",
+                  "fieldPath": "aggregateRoot",
+                  "fieldType": "Clinic"
+                },
+                {
+                  "fieldAlias": "beginDate",
+                  "fieldName": "beginDate",
+                  "fieldPath": "beginDate",
+                  "fieldType": "_DateTime"
+                },
+                {
+                  "fieldAlias": "clinicCustomer",
+                  "fieldName": "clinicCustomer",
+                  "fieldPath": "clinicCustomer",
+                  "fieldType": "ClinicCustomer"
+                },
+                {
+                  "fieldAlias": "clinicDoctorAvailability",
+                  "fieldName": "clinicDoctorAvailability",
+                  "fieldPath": "clinicDoctorAvailability",
+                  "fieldType": "ClinicDoctorAvailability"
+                },
+                {
+                  "fieldAlias": "comment",
+                  "fieldName": "comment",
+                  "fieldPath": "comment",
+                  "fieldType": "String"
+                },
+                {
+                  "fieldAlias": "endDate",
+                  "fieldName": "endDate",
+                  "fieldPath": "endDate",
+                  "fieldType": "_DateTime"
+                }
+              ]
+            },
+            {
+              "mutationAlias": "deleteClinicDoctorTable",
+              "mutationName": "deleteClinicDoctorTable",
+              "mutationType": "ON_INSTANCE",
+              "inputList": [
+                {
+                  "inputName": "id",
+                  "inputPath": "",
+                  "inputRefTypeName": {
+                    "refAggName": "",
+                    "refEntityName": ""
+                  },
+                  "inputType": "ID"
+                }
+              ],
+              "getQueryFieldList": []
+            }
+          ],
+          "childEntityRefList": []
+        },
+        {
+          "name": "ClinicOffice",
+          "queryList": [
+            {
+              "queryAlias": "searchClinicOffice",
+              "queryName": "searchClinicOffice",
+              "queryType": "_E_ClinicOffice",
+              "fieldList": [
+                {
+                  "fieldAlias": "id",
+                  "fieldName": "id",
+                  "fieldPath": "id",
+                  "fieldType": "ID"
+                },
+                {
+                  "fieldAlias": "aggregateRoot",
+                  "fieldName": "aggregateRoot",
+                  "fieldPath": "aggregateRoot",
+                  "fieldType": "Clinic"
+                },
+                {
+                  "fieldAlias": "clinic",
+                  "fieldName": "clinic",
+                  "fieldPath": "clinic",
+                  "fieldType": "Clinic"
+                },
+                {
+                  "fieldAlias": "officeNum",
+                  "fieldName": "officeNum",
+                  "fieldPath": "officeNum",
+                  "fieldType": "String"
+                }
+              ]
+            }
+          ],
+          "mutationList": [
+            {
+              "mutationAlias": "getForUpdateClinicOffice",
+              "mutationName": "getForUpdateClinicOffice",
+              "mutationType": "ON_INSTANCE",
+              "inputList": [
+                {
+                  "inputName": "id",
+                  "inputPath": "",
+                  "inputRefTypeName": {
+                    "refAggName": "",
+                    "refEntityName": ""
+                  },
+                  "inputType": "ID"
+                }
+              ],
+              "getQueryFieldList": []
+            },
+            {
+              "mutationAlias": "createClinicOffice",
+              "mutationName": "createClinicOffice",
+              "mutationType": "SIMPLE",
+              "inputList": [
+                {
+                  "inputName": "input",
+                  "inputPath": "",
+                  "inputRefTypeName": {
+                    "refAggName": "",
+                    "refEntityName": ""
+                  },
+                  "inputType": [
+                    {
+                      "inputName": "clinic",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "Clinic",
+                        "refEntityName": "Clinic"
+                      },
+                      "inputType": "ID"
+                    },
+                    {
+                      "inputName": "officeNum",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": "String"
+                      },
+                      "inputType": "String"
+                    },
+                    {
+                      "inputName": "_expr",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": ""
+                      },
+                      "inputType": []
+                    }
+                  ]
+                }
+              ],
+              "getQueryFieldList": []
+            },
+            {
+              "mutationAlias": "updateClinicOffice",
+              "mutationName": "updateClinicOffice",
+              "mutationType": "ON_INSTANCE",
+              "inputList": [
+                {
+                  "inputName": "input",
+                  "inputPath": "",
+                  "inputRefTypeName": {
+                    "refAggName": "",
+                    "refEntityName": ""
+                  },
+                  "inputType": [
+                    {
+                      "inputName": "id",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": "ID"
+                      },
+                      "inputType": "ID"
+                    },
+                    {
+                      "inputName": "clinic",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "Clinic",
+                        "refEntityName": "Clinic"
+                      },
+                      "inputType": "ID"
+                    },
+                    {
+                      "inputName": "officeNum",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": "String"
+                      },
+                      "inputType": "String"
+                    },
+                    {
+                      "inputName": "_expr",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": ""
+                      },
+                      "inputType": []
+                    }
+                  ]
+                }
+              ],
+              "getQueryFieldList": [
+                {
+                  "fieldAlias": "id",
+                  "fieldName": "id",
+                  "fieldPath": "id",
+                  "fieldType": "ID"
+                },
+                {
+                  "fieldAlias": "aggregateRoot",
+                  "fieldName": "aggregateRoot",
+                  "fieldPath": "aggregateRoot",
+                  "fieldType": "Clinic"
+                },
+                {
+                  "fieldAlias": "clinic",
+                  "fieldName": "clinic",
+                  "fieldPath": "clinic",
+                  "fieldType": "Clinic"
+                },
+                {
+                  "fieldAlias": "officeNum",
+                  "fieldName": "officeNum",
+                  "fieldPath": "officeNum",
+                  "fieldType": "String"
+                }
+              ]
+            },
+            {
+              "mutationAlias": "deleteClinicOffice",
+              "mutationName": "deleteClinicOffice",
+              "mutationType": "ON_INSTANCE",
+              "inputList": [
+                {
+                  "inputName": "id",
+                  "inputPath": "",
+                  "inputRefTypeName": {
+                    "refAggName": "",
+                    "refEntityName": ""
+                  },
+                  "inputType": "ID"
+                }
+              ],
+              "getQueryFieldList": []
+            }
+          ],
+          "childEntityRefList": [
+            {
+              "isCollection": true,
+              "fieldType": "ClinicDoctorAvailability",
+              "fieldName": "clinicOfficeAvailabilityList",
+              "backRefereceAttributeName": "clinicOffice"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "aggName": "Customer",
+      "entityList": [
+        {
+          "name": "Customer",
+          "queryList": [
+            {
+              "queryAlias": "searchCustomer",
+              "queryName": "searchCustomer",
+              "queryType": "_E_Customer",
+              "fieldList": [
+                {
+                  "fieldAlias": "id",
+                  "fieldName": "id",
+                  "fieldPath": "id",
+                  "fieldType": "ID"
+                },
+                {
+                  "fieldAlias": "insuranceNum",
+                  "fieldName": "insuranceNum",
+                  "fieldPath": "insuranceNum",
+                  "fieldType": "String"
+                },
+                {
+                  "fieldAlias": "person",
+                  "fieldName": "person",
+                  "fieldPath": "person",
+                  "fieldType": [
+                    {
+                      "fieldAlias": "entityId",
+                      "fieldName": "entityId",
+                      "fieldPath": "entityId",
+                      "fieldType": "_G_PersonReference"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "mutationList": [
+            {
+              "mutationAlias": "getForUpdateCustomer",
+              "mutationName": "getForUpdateCustomer",
+              "mutationType": "ON_INSTANCE",
+              "inputList": [
+                {
+                  "inputName": "id",
+                  "inputPath": "",
+                  "inputRefTypeName": {
+                    "refAggName": "",
+                    "refEntityName": ""
+                  },
+                  "inputType": "ID"
+                }
+              ],
+              "getQueryFieldList": []
+            },
+            {
+              "mutationAlias": "createCustomer",
+              "mutationName": "createCustomer",
+              "mutationType": "SIMPLE",
+              "inputList": [
+                {
+                  "inputName": "input",
+                  "inputPath": "",
+                  "inputRefTypeName": {
+                    "refAggName": "",
+                    "refEntityName": ""
+                  },
+                  "inputType": [
+                    {
+                      "inputName": "insuranceNum",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": "String"
+                      },
+                      "inputType": "String"
+                    },
+                    {
+                      "inputName": "person",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "Person",
+                        "refEntityName": "_G_PersonReference"
+                      },
+                      "inputType": [
+                        {
+                          "inputName": "entityId",
+                          "inputPath": "",
+                          "inputRefTypeName": {
+                            "refAggName": "",
+                            "refEntityName": ""
+                          },
+                          "inputType": "String"
+                        }
+                      ]
+                    },
+                    {
+                      "inputName": "_expr",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": ""
+                      },
+                      "inputType": []
+                    }
+                  ]
+                }
+              ],
+              "getQueryFieldList": []
+            },
+            {
+              "mutationAlias": "updateCustomer",
+              "mutationName": "updateCustomer",
+              "mutationType": "ON_INSTANCE",
+              "inputList": [
+                {
+                  "inputName": "input",
+                  "inputPath": "",
+                  "inputRefTypeName": {
+                    "refAggName": "",
+                    "refEntityName": ""
+                  },
+                  "inputType": [
+                    {
+                      "inputName": "id",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": "ID"
+                      },
+                      "inputType": "ID"
+                    },
+                    {
+                      "inputName": "insuranceNum",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": "String"
+                      },
+                      "inputType": "String"
+                    },
+                    {
+                      "inputName": "person",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "Person",
+                        "refEntityName": "_G_PersonReference"
+                      },
+                      "inputType": [
+                        {
+                          "inputName": "entityId",
+                          "inputPath": "",
+                          "inputRefTypeName": {
+                            "refAggName": "",
+                            "refEntityName": ""
+                          },
+                          "inputType": "String"
+                        }
+                      ]
+                    },
+                    {
+                      "inputName": "_expr",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": ""
+                      },
+                      "inputType": []
+                    }
+                  ]
+                }
+              ],
+              "getQueryFieldList": [
+                {
+                  "fieldAlias": "id",
+                  "fieldName": "id",
+                  "fieldPath": "id",
+                  "fieldType": "ID"
+                },
+                {
+                  "fieldAlias": "insuranceNum",
+                  "fieldName": "insuranceNum",
+                  "fieldPath": "insuranceNum",
+                  "fieldType": "String"
+                },
+                {
+                  "fieldAlias": "person",
+                  "fieldName": "person",
+                  "fieldPath": "person",
+                  "fieldType": [
+                    {
+                      "fieldAlias": "entityId",
+                      "fieldName": "entityId",
+                      "fieldPath": "entityId",
+                      "fieldType": "_G_PersonReference"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "mutationAlias": "deleteCustomer",
+              "mutationName": "deleteCustomer",
+              "mutationType": "ON_INSTANCE",
+              "inputList": [
+                {
+                  "inputName": "id",
+                  "inputPath": "",
+                  "inputRefTypeName": {
+                    "refAggName": "",
+                    "refEntityName": ""
+                  },
+                  "inputType": "ID"
+                }
+              ],
+              "getQueryFieldList": []
+            }
+          ],
+          "childEntityRefList": []
+        }
+      ]
+    },
+    {
+      "aggName": "Doctor",
+      "entityList": [
+        {
+          "name": "Doctor",
+          "queryList": [
+            {
+              "queryAlias": "searchDoctor",
+              "queryName": "searchDoctor",
+              "queryType": "_E_Doctor",
+              "fieldList": [
+                {
+                  "fieldAlias": "id",
+                  "fieldName": "id",
+                  "fieldPath": "id",
+                  "fieldType": "ID"
+                },
+                {
+                  "fieldAlias": "doctorType",
+                  "fieldName": "doctorType",
+                  "fieldPath": "doctorType",
+                  "fieldType": "DoctorType"
+                },
+                {
+                  "fieldAlias": "person",
+                  "fieldName": "person",
+                  "fieldPath": "person",
+                  "fieldType": [
+                    {
+                      "fieldAlias": "entityId",
+                      "fieldName": "entityId",
+                      "fieldPath": "entityId",
+                      "fieldType": "_G_PersonReference"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "mutationList": [
+            {
+              "mutationAlias": "getForUpdateDoctor",
+              "mutationName": "getForUpdateDoctor",
+              "mutationType": "ON_INSTANCE",
+              "inputList": [
+                {
+                  "inputName": "id",
+                  "inputPath": "",
+                  "inputRefTypeName": {
+                    "refAggName": "",
+                    "refEntityName": ""
+                  },
+                  "inputType": "ID"
+                }
+              ],
+              "getQueryFieldList": []
+            },
+            {
+              "mutationAlias": "createDoctor",
+              "mutationName": "createDoctor",
+              "mutationType": "SIMPLE",
+              "inputList": [
+                {
+                  "inputName": "input",
+                  "inputPath": "",
+                  "inputRefTypeName": {
+                    "refAggName": "",
+                    "refEntityName": ""
+                  },
+                  "inputType": [
+                    {
+                      "inputName": "doctorType",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "RootDictionary",
+                        "refEntityName": "DoctorType"
+                      },
+                      "inputType": "ID"
+                    },
+                    {
+                      "inputName": "person",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "Person",
+                        "refEntityName": "_G_PersonReference"
+                      },
+                      "inputType": [
+                        {
+                          "inputName": "entityId",
+                          "inputPath": "",
+                          "inputRefTypeName": {
+                            "refAggName": "",
+                            "refEntityName": ""
+                          },
+                          "inputType": "String"
+                        }
+                      ]
+                    },
+                    {
+                      "inputName": "_expr",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": ""
+                      },
+                      "inputType": []
+                    }
+                  ]
+                }
+              ],
+              "getQueryFieldList": []
+            },
+            {
+              "mutationAlias": "updateDoctor",
+              "mutationName": "updateDoctor",
+              "mutationType": "ON_INSTANCE",
+              "inputList": [
+                {
+                  "inputName": "input",
+                  "inputPath": "",
+                  "inputRefTypeName": {
+                    "refAggName": "",
+                    "refEntityName": ""
+                  },
+                  "inputType": [
+                    {
+                      "inputName": "id",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": "ID"
+                      },
+                      "inputType": "ID"
+                    },
+                    {
+                      "inputName": "doctorType",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "RootDictionary",
+                        "refEntityName": "DoctorType"
+                      },
+                      "inputType": "ID"
+                    },
+                    {
+                      "inputName": "person",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "Person",
+                        "refEntityName": "_G_PersonReference"
+                      },
+                      "inputType": [
+                        {
+                          "inputName": "entityId",
+                          "inputPath": "",
+                          "inputRefTypeName": {
+                            "refAggName": "",
+                            "refEntityName": ""
+                          },
+                          "inputType": "String"
+                        }
+                      ]
+                    },
+                    {
+                      "inputName": "_expr",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": ""
+                      },
+                      "inputType": []
+                    }
+                  ]
+                }
+              ],
+              "getQueryFieldList": [
+                {
+                  "fieldAlias": "id",
+                  "fieldName": "id",
+                  "fieldPath": "id",
+                  "fieldType": "ID"
+                },
+                {
+                  "fieldAlias": "doctorType",
+                  "fieldName": "doctorType",
+                  "fieldPath": "doctorType",
+                  "fieldType": "DoctorType"
+                },
+                {
+                  "fieldAlias": "person",
+                  "fieldName": "person",
+                  "fieldPath": "person",
+                  "fieldType": [
+                    {
+                      "fieldAlias": "entityId",
+                      "fieldName": "entityId",
+                      "fieldPath": "entityId",
+                      "fieldType": "_G_PersonReference"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "mutationAlias": "deleteDoctor",
+              "mutationName": "deleteDoctor",
+              "mutationType": "ON_INSTANCE",
+              "inputList": [
+                {
+                  "inputName": "id",
+                  "inputPath": "",
+                  "inputRefTypeName": {
+                    "refAggName": "",
+                    "refEntityName": ""
+                  },
+                  "inputType": "ID"
+                }
+              ],
+              "getQueryFieldList": []
+            }
+          ],
+          "childEntityRefList": []
+        }
+      ]
+    },
+    {
+      "aggName": "Person",
+      "entityList": [
+        {
+          "name": "Person",
+          "queryList": [
+            {
+              "queryAlias": "searchPerson",
+              "queryName": "searchPerson",
+              "queryType": "_E_Person",
+              "fieldList": [
+                {
+                  "fieldAlias": "id",
+                  "fieldName": "id",
+                  "fieldPath": "id",
+                  "fieldType": "ID"
+                },
+                {
+                  "fieldAlias": "birthDate",
+                  "fieldName": "birthDate",
+                  "fieldPath": "birthDate",
+                  "fieldType": "_Date"
+                },
+                {
+                  "fieldAlias": "firstName",
+                  "fieldName": "firstName",
+                  "fieldPath": "firstName",
+                  "fieldType": "String"
+                },
+                {
+                  "fieldAlias": "lastName",
+                  "fieldName": "lastName",
+                  "fieldPath": "lastName",
+                  "fieldType": "String"
+                },
+                {
+                  "fieldAlias": "sex",
+                  "fieldName": "sex",
+                  "fieldPath": "sex",
+                  "fieldType": "_EN_Sex"
+                }
+              ]
+            }
+          ],
+          "mutationList": [
+            {
+              "mutationAlias": "getForUpdatePerson",
+              "mutationName": "getForUpdatePerson",
+              "mutationType": "ON_INSTANCE",
+              "inputList": [
+                {
+                  "inputName": "id",
+                  "inputPath": "",
+                  "inputRefTypeName": {
+                    "refAggName": "",
+                    "refEntityName": ""
+                  },
+                  "inputType": "ID"
+                }
+              ],
+              "getQueryFieldList": []
+            },
+            {
+              "mutationAlias": "createPerson",
+              "mutationName": "createPerson",
+              "mutationType": "SIMPLE",
+              "inputList": [
+                {
+                  "inputName": "input",
+                  "inputPath": "",
+                  "inputRefTypeName": {
+                    "refAggName": "",
+                    "refEntityName": ""
+                  },
+                  "inputType": [
+                    {
+                      "inputName": "id",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": "ID"
+                      },
+                      "inputType": "ID"
+                    },
+                    {
+                      "inputName": "birthDate",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": "_Date"
+                      },
+                      "inputType": "_Date"
+                    },
+                    {
+                      "inputName": "firstName",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": "String"
+                      },
+                      "inputType": "String"
+                    },
+                    {
+                      "inputName": "lastName",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": "String"
+                      },
+                      "inputType": "String"
+                    },
+                    {
+                      "inputName": "sex",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": "_EN_Sex"
+                      },
+                      "inputType": "_EN_Sex"
+                    },
+                    {
+                      "inputName": "_expr",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": ""
+                      },
+                      "inputType": []
+                    }
+                  ]
+                }
+              ],
+              "getQueryFieldList": []
+            },
+            {
+              "mutationAlias": "updatePerson",
+              "mutationName": "updatePerson",
+              "mutationType": "ON_INSTANCE",
+              "inputList": [
+                {
+                  "inputName": "input",
+                  "inputPath": "",
+                  "inputRefTypeName": {
+                    "refAggName": "",
+                    "refEntityName": ""
+                  },
+                  "inputType": [
+                    {
+                      "inputName": "id",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": "ID"
+                      },
+                      "inputType": "ID"
+                    },
+                    {
+                      "inputName": "birthDate",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": "_Date"
+                      },
+                      "inputType": "_Date"
+                    },
+                    {
+                      "inputName": "firstName",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": "String"
+                      },
+                      "inputType": "String"
+                    },
+                    {
+                      "inputName": "lastName",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": "String"
+                      },
+                      "inputType": "String"
+                    },
+                    {
+                      "inputName": "sex",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": "_EN_Sex"
+                      },
+                      "inputType": "_EN_Sex"
+                    },
+                    {
+                      "inputName": "_expr",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": ""
+                      },
+                      "inputType": []
+                    }
+                  ]
+                }
+              ],
+              "getQueryFieldList": [
+                {
+                  "fieldAlias": "id",
+                  "fieldName": "id",
+                  "fieldPath": "id",
+                  "fieldType": "ID"
+                },
+                {
+                  "fieldAlias": "birthDate",
+                  "fieldName": "birthDate",
+                  "fieldPath": "birthDate",
+                  "fieldType": "_Date"
+                },
+                {
+                  "fieldAlias": "firstName",
+                  "fieldName": "firstName",
+                  "fieldPath": "firstName",
+                  "fieldType": "String"
+                },
+                {
+                  "fieldAlias": "lastName",
+                  "fieldName": "lastName",
+                  "fieldPath": "lastName",
+                  "fieldType": "String"
+                },
+                {
+                  "fieldAlias": "sex",
+                  "fieldName": "sex",
+                  "fieldPath": "sex",
+                  "fieldType": "_EN_Sex"
+                }
+              ]
+            },
+            {
+              "mutationAlias": "deletePerson",
+              "mutationName": "deletePerson",
+              "mutationType": "ON_INSTANCE",
+              "inputList": [
+                {
+                  "inputName": "id",
+                  "inputPath": "",
+                  "inputRefTypeName": {
+                    "refAggName": "",
+                    "refEntityName": ""
+                  },
+                  "inputType": "ID"
+                }
+              ],
+              "getQueryFieldList": []
+            }
+          ],
+          "childEntityRefList": []
+        }
+      ]
+    },
+    {
+      "aggName": "RootDictionary",
+      "entityList": [
+        {
+          "name": "DoctorType",
+          "queryList": [
+            {
+              "queryAlias": "searchDoctorType",
+              "queryName": "searchDoctorType",
+              "queryType": "_E_DoctorType",
+              "fieldList": [
+                {
+                  "fieldAlias": "id",
+                  "fieldName": "id",
+                  "fieldPath": "id",
+                  "fieldType": "ID"
+                },
+                {
+                  "fieldAlias": "descr",
+                  "fieldName": "descr",
+                  "fieldPath": "descr",
+                  "fieldType": "String"
+                },
+                {
+                  "fieldAlias": "name",
+                  "fieldName": "name",
+                  "fieldPath": "name",
+                  "fieldType": "String"
+                }
+              ]
+            }
+          ],
+          "mutationList": [
+            {
+              "mutationAlias": "getForUpdateDoctorType",
+              "mutationName": "getForUpdateDoctorType",
+              "mutationType": "ON_INSTANCE",
+              "inputList": [
+                {
+                  "inputName": "id",
+                  "inputPath": "",
+                  "inputRefTypeName": {
+                    "refAggName": "",
+                    "refEntityName": ""
+                  },
+                  "inputType": "ID"
+                }
+              ],
+              "getQueryFieldList": []
+            },
+            {
+              "mutationAlias": "updateOrCreateDoctorType",
+              "mutationName": "updateOrCreateDoctorType",
+              "mutationType": "ON_INSTANCE",
+              "inputList": [
+                {
+                  "inputName": "input",
+                  "inputPath": "",
+                  "inputRefTypeName": {
+                    "refAggName": "",
+                    "refEntityName": ""
+                  },
+                  "inputType": [
+                    {
+                      "inputName": "id",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": "ID"
+                      },
+                      "inputType": "ID"
+                    },
+                    {
+                      "inputName": "descr",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": "String"
+                      },
+                      "inputType": "String"
+                    },
+                    {
+                      "inputName": "name",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": "String"
+                      },
+                      "inputType": "String"
+                    },
+                    {
+                      "inputName": "_expr",
+                      "inputPath": "",
+                      "inputRefTypeName": {
+                        "refAggName": "",
+                        "refEntityName": ""
+                      },
+                      "inputType": []
+                    }
+                  ]
+                }
+              ],
+              "getQueryFieldList": []
+            }
+          ],
+          "childEntityRefList": []
+        }
+      ]
+    },
+    {
+      "aggName": "graphql",
+      "entityList": [
+        {
+          "name": "schema",
+          "queryList": [],
+          "mutationList": [],
+          "childEntityRefList": []
+        }
+      ]
+    }
+  ]
+}

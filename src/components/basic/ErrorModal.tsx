@@ -5,12 +5,13 @@ interface Props {
     setError: (value: Error | null) => void
 }
 const ErrorModal: React.FC<Props> = ({ error, setError }) => {
+    const AnyModal = Modal as any;
 
     return (
         <>
-            <Modal footer={null} visible={true} onCancel={() => setError(null)}>
+            <AnyModal footer={null} visible={true} onCancel={() => setError(null)}>
                 {error.message}
-            </Modal>
+            </AnyModal>
         </>
     )
 

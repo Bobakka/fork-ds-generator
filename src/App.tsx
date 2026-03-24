@@ -2,26 +2,26 @@ import 'antd/dist/antd.css';
 import React, { useEffect, useState } from 'react';
 import { ApolloClient, ApolloProvider, NormalizedCacheObject } from '@apollo/client';
 import { cache } from './cache'
-
-import { MainMenu } from './components/__generate/MainMenu';
+import { AppRefine } from './refine/AppRefine';
 
 export const App: React.FC = () => {
   const [apolloClient, setAppoloClient] = useState<ApolloClient<NormalizedCacheObject>>()
+  const runtimeEnv = (globalThis as any).process?.env ?? {}
 
   const initEnv = async () => {
     const res = await fetch("/env.json")
     const json = JSON.parse(await res.text())
-    process.env.DS_ENDPOINT = json.DS_ENDPOINT
+    runtimeEnv.DS_ENDPOINT = json.DS_ENDPOINT
   }
 
   const initClient = async () => {
-    if (process.env.NODE_ENV === 'production')
+    if (runtimeEnv.NODE_ENV === 'production')
       await initEnv()
 
     if (!apolloClient) {
       return new ApolloClient({
         cache: cache,
-        uri: process.env.NODE_ENV === 'production' ? process.env.DS_ENDPOINT : '/graphql',
+        uri: runtimeEnv.NODE_ENV === 'production' ? runtimeEnv.DS_ENDPOINT : '/graphql',
       })
     }
   }
@@ -39,7 +39,7 @@ export const App: React.FC = () => {
   if (apolloClient)
   return (
     <ApolloProvider client={apolloClient}>
-      <MainMenu />
+      <AppRefine apolloClient={apolloClient} />
     </ApolloProvider>
   )
 
