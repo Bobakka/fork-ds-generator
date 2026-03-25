@@ -1,4 +1,5 @@
 import { CodegenConfig } from '@graphql-codegen/cli'
+import { parse } from 'graphql'
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'fs'
 import { AggList, FormGenConfig, TypedInput } from './tsgen/src/utils/types/Basic';
 import { createPrefix, deletePrefix, primitiveTypeList, referencePostfix, referencePrefix, rootDictionaryTypeName, updateOrCreatePrefix, updatePrefix } from './tsgen/src/utils/Constants'
@@ -8,6 +9,8 @@ interface RefineGeneratedField {
   name: string
   type: string
   required: boolean
+  requiredCreate?: boolean
+  requiredUpdate?: boolean
   isReference: boolean
   referenceResource?: string
 }
@@ -118,6 +121,58 @@ const config: CodegenConfig = {
       const basePath = args.slice(0, args.lastIndexOf('/') + 1)
       const generatedFcForApp = JSON.parse(readFileSync(args, { encoding: "utf8" })) as AggList
 
+      // Required-field detection must match GraphQL non-null input fields.
+      // Current implementation previously treated only `ID` as required, which makes UI
+      // omit other mandatory values (e.g. Person.firstName / lastName / sex).
+      const schemaStr = readFileSync('src/graphql/schema.graphql', { encoding: 'utf8' })
+      const schemaAst = parse(schemaStr)
+      const inputTypeDefMap = new Map<string, any>(
+        (schemaAst.definitions as any[]).filter((d) => d.kind === 'InputObjectTypeDefinition').map((d) => [d.name.value, d]),
+      )
+      const primitiveSet = new Set(primitiveTypeList)
+      const enumPrefix = '_EN_'
+
+      const isNonNullTop = (typeNode: any): boolean => typeNode?.kind === 'NonNullType'
+      const getNamedTypeName = (typeNode: any): string => {
+        if (!typeNode) return ''
+        if (typeNode.kind === 'NamedType') return typeNode.name.value
+        if (typeNode.kind === 'NonNullType' || typeNode.kind === 'ListType') return getNamedTypeName(typeNode.type)
+        return ''
+      }
+
+      const collectRequiredLeafPaths = (inputTypeName: string, prefix = ''): Set<string> => {
+        const def = inputTypeDefMap.get(inputTypeName)
+        if (!def?.fields) return new Set()
+
+        const out = new Set<string>()
+        for (const fieldDef of def.fields) {
+          const fieldName = fieldDef.name.value
+          const namedType = getNamedTypeName(fieldDef.type)
+          const childPrefix = prefix ? `${prefix}.${fieldName}` : fieldName
+
+          if (inputTypeDefMap.has(namedType)) {
+            for (const nested of collectRequiredLeafPaths(namedType, childPrefix)) out.add(nested)
+            continue
+          }
+
+          const isPrimitiveOrEnum = primitiveSet.has(namedType) || namedType.startsWith(enumPrefix)
+          if (isPrimitiveOrEnum && isNonNullTop(fieldDef.type)) {
+            out.add(childPrefix)
+          }
+        }
+        return out
+      }
+
+      const requiredForEntityCreate = (entityName: string): Set<string> => {
+        const createTypeName = `_Create${entityName}Input`
+        return collectRequiredLeafPaths(createTypeName)
+      }
+
+      const requiredForEntityUpdate = (entityName: string): Set<string> => {
+        const updateTypeName = `_Update${entityName}Input`
+        return collectRequiredLeafPaths(updateTypeName)
+      }
+
       if (!existsSync(basePath)) {
         mkdirSync(basePath, { recursive: true })
       }
@@ -147,6 +202,17 @@ const config: CodegenConfig = {
             ...(createInput && typeof createInput.inputType !== "string" ? flattenInputs(createInput.inputType) : []),
             ...(updateInput && typeof updateInput.inputType !== "string" ? flattenInputs(updateInput.inputType) : []),
           ])
+
+          // Override required flags using schema non-null definitions.
+          // Create and update use different nullability, so keep both separately.
+          const requiredCreate = requiredForEntityCreate(entity.name)
+          const requiredUpdate = requiredForEntityUpdate(entity.name)
+          inputFields.forEach((f) => {
+            f.requiredCreate = requiredCreate.has(f.name)
+            f.requiredUpdate = requiredUpdate.has(f.name)
+            // Backward-compat: keep `required` as create-requiredness.
+            f.required = f.requiredCreate
+          })
 
           refineMeta.resources.push({
             name: entity.name,

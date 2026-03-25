@@ -1,0 +1,15 @@
+.refine-login-wrap {
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 10vh;
+  background: linear-gradient(180deg, #e8eef7 0%, #f5f7fb 45%);
+}
+
+.refine-login-card {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 4px 24px rgba(20, 40, 80, 0.08);
+}

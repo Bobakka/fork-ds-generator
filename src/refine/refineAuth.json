@@ -1,0 +1,7 @@
+{
+  "version": 1,
+  "enabled": false,
+  "loginPath": "/login",
+  "provider": "mock",
+  "keycloakClientPath": "/keycloak.json"
+}

@@ -1,0 +1,5 @@
+{
+  "url": "https://your-keycloak.example/auth",
+  "realm": "your-realm",
+  "clientId": "your-spa-client"
+}

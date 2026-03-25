@@ -33,6 +33,8 @@ export interface ResourceField {
   name: string;
   type: string;
   required: boolean;
+  requiredCreate?: boolean;
+  requiredUpdate?: boolean;
   isReference: boolean;
   referenceResource?: string;
 }

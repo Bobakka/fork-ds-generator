@@ -28,7 +28,15 @@ export const createDataProvider = (
         const value = (condFilter as any).value;
         const field = (condFilter as any).field as string | undefined;
         if (field && value != null && value !== "") {
-          cond = `it.${field}.id=='${String(value)}'`;
+          // `field` comes from refineMeta reference paths (parentField in URL).
+          // Some reference paths point to a scalar entity id, e.g. `person.entityId` (String).
+          // Others are object references, e.g. `doctorType` (ID) where we need `it.<field>.id`.
+          // Heuristic: if path contains `entityId` -> compare directly, otherwise append `.id`.
+          if (field.includes(".entityId")) {
+            cond = `it.${field}=='${String(value)}'`;
+          } else {
+            cond = `it.${field}.id=='${String(value)}'`;
+          }
         } else if (value != null && value !== "") {
           cond = String(value);
         }

@@ -108,6 +108,67 @@ const main = () => {
 
   const refineMeta = { resources: [] };
 
+// Required-field detection must match GraphQL non-null input fields.
+// Previously this generator treated only `ID` as required, which makes UI omit other
+// mandatory values (e.g. Person.firstName / lastName / sex).
+const inputTypeDefMap = new Map(
+  astNode.definitions
+    .filter((d) => d.kind === "InputObjectTypeDefinition")
+    .map((d) => [d.name.value, d]),
+);
+const primitiveSet = new Set(primitiveTypeList);
+const enumPrefix = "_EN_";
+
+const isNonNullTop = (typeNode) => typeNode?.kind === "NonNullType";
+const getNamedTypeName = (typeNode) => {
+  if (!typeNode) return "";
+  if (typeNode.kind === "NamedType") return typeNode.name.value;
+  if (typeNode.kind === "NonNullType" || typeNode.kind === "ListType") return getNamedTypeName(typeNode.type);
+  return "";
+};
+
+const collectRequiredLeafPaths = (inputTypeName, prefix = "") => {
+  const def = inputTypeDefMap.get(inputTypeName);
+  if (!def?.fields) return new Set();
+
+  const out = new Set();
+  for (const fieldDef of def.fields) {
+    const fieldName = fieldDef.name.value;
+    const namedType = getNamedTypeName(fieldDef.type);
+    const childPrefix = prefix ? `${prefix}.${fieldName}` : fieldName;
+
+    if (inputTypeDefMap.has(namedType)) {
+      for (const nested of collectRequiredLeafPaths(namedType, childPrefix)) out.add(nested);
+      continue;
+    }
+
+    const isPrimitiveOrEnum = primitiveSet.has(namedType) || namedType.startsWith(enumPrefix);
+    if (isPrimitiveOrEnum && isNonNullTop(fieldDef.type)) {
+      out.add(childPrefix);
+    }
+  }
+  return out;
+};
+
+const requiredForEntity = (entityName) => {
+  const createTypeName = `_Create${entityName}Input`;
+  const updateTypeName = `_Update${entityName}Input`;
+  const required = new Set();
+  for (const p of collectRequiredLeafPaths(createTypeName)) required.add(p);
+  for (const p of collectRequiredLeafPaths(updateTypeName)) required.add(p);
+  return required;
+};
+
+const requiredForEntityCreate = (entityName) => {
+  const createTypeName = `_Create${entityName}Input`;
+  return collectRequiredLeafPaths(createTypeName);
+};
+
+const requiredForEntityUpdate = (entityName) => {
+  const updateTypeName = `_Update${entityName}Input`;
+  return collectRequiredLeafPaths(updateTypeName);
+};
+
   parsed.aggList.forEach((agg) => {
     const isDictionary = agg.aggName === rootDictionaryTypeName;
 
@@ -131,6 +192,16 @@ const main = () => {
         ...(createInput && typeof createInput.inputType !== "string" ? flattenInputs(createInput.inputType) : []),
         ...(updateInput && typeof updateInput.inputType !== "string" ? flattenInputs(updateInput.inputType) : []),
       ]);
+
+      // Override required flags using schema non-null definitions.
+      // Create and update use different nullability; store both separately.
+      const requiredCreate = requiredForEntityCreate(entity.name);
+      const requiredUpdate = requiredForEntityUpdate(entity.name);
+      fields.forEach((f) => {
+        f.requiredCreate = requiredCreate.has(f.name);
+        f.requiredUpdate = requiredUpdate.has(f.name);
+        f.required = f.requiredCreate;
+      });
 
       refineMeta.resources.push({
         name: entity.name,

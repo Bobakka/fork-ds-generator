@@ -56,3 +56,63 @@
   margin-bottom: 4px !important;
 }
 
+/* Persona shells (see refineUiOverlay.json layoutClassName) */
+.app-shell.persona-doctor .app-shell-content {
+  background: linear-gradient(180deg, #f0f7ff 0%, #f5f7fb 40%);
+}
+
+.app-shell.persona-patient .app-shell-header {
+  background: #1a4d3a !important;
+}
+
+.app-shell.persona-patient .app-shell-content {
+  background: #f4faf7;
+}
+
+/* Reference select rich dropdown */
+.ref-select-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.ref-select-option-main {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.ref-select-option-title {
+  font-weight: 600;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 360px;
+}
+
+.ref-select-option-subtitle {
+  color: rgba(0, 0, 0, 0.45);
+  font-size: 12px;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 360px;
+}
+
+.ref-select-option-open {
+  flex: 0 0 auto;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.ref-select-option-open:hover {
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.ref-select-dropdown-footer {
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  padding: 6px 0;
+}
+

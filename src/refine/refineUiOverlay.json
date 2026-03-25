@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "defaultPersona": "admin",
+  "personas": {
+    "admin": {
+      "priority": 100,
+      "matchRoles": ["admin", "ADMIN", "realm-admin"],
+      "resources": null,
+      "hiddenFields": {},
+      "shell": {
+        "appTitle": "DS Admin",
+        "layoutClassName": "persona-admin"
+      }
+    },
+    "doctor": {
+      "priority": 20,
+      "matchRoles": ["doctor", "DOCTOR", "physician"],
+      "resources": [
+        "Clinic",
+        "ClinicOffice",
+        "Doctor",
+        "ClinicDoctor",
+        "ClinicDoctorAvailability",
+        "ClinicDoctorTable",
+        "Person",
+        "DoctorType"
+      ],
+      "hiddenFields": {
+        "Person": ["birthDate"]
+      },
+      "shell": {
+        "appTitle": "Clinic — Doctor",
+        "layoutClassName": "persona-doctor"
+      }
+    },
+    "patient": {
+      "priority": 10,
+      "matchRoles": ["patient", "PATIENT", "customer"],
+      "resources": ["Customer", "ClinicDoctorTable", "Clinic", "Person"],
+      "hiddenFields": {
+        "Person": ["sex"]
+      },
+      "shell": {
+        "appTitle": "My clinic",
+        "layoutClassName": "persona-patient"
+      }
+    }
+  }
+}

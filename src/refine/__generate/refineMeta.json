@@ -16,31 +16,41 @@
           "name": "address.city",
           "type": "String",
           "required": false,
-          "isReference": false
+          "isReference": false,
+          "requiredCreate": false,
+          "requiredUpdate": false
         },
         {
           "name": "address.flatNo",
           "type": "String",
           "required": false,
-          "isReference": false
+          "isReference": false,
+          "requiredCreate": false,
+          "requiredUpdate": false
         },
         {
           "name": "address.street",
           "type": "String",
           "required": false,
-          "isReference": false
+          "isReference": false,
+          "requiredCreate": false,
+          "requiredUpdate": false
         },
         {
           "name": "name",
           "type": "String",
-          "required": false,
-          "isReference": false
+          "required": true,
+          "isReference": false,
+          "requiredCreate": true,
+          "requiredUpdate": false
         },
         {
           "name": "id",
           "type": "ID",
-          "required": true,
-          "isReference": false
+          "required": false,
+          "isReference": false,
+          "requiredCreate": false,
+          "requiredUpdate": true
         }
       ]
     },
@@ -61,20 +71,26 @@
           "type": "ID",
           "required": true,
           "isReference": true,
-          "referenceResource": "Clinic"
+          "referenceResource": "Clinic",
+          "requiredCreate": true,
+          "requiredUpdate": false
         },
         {
           "name": "customer.entityId",
           "type": "String",
-          "required": false,
+          "required": true,
           "isReference": true,
-          "referenceResource": "Customer"
+          "referenceResource": "Customer",
+          "requiredCreate": true,
+          "requiredUpdate": true
         },
         {
           "name": "id",
           "type": "ID",
-          "required": true,
-          "isReference": false
+          "required": false,
+          "isReference": false,
+          "requiredCreate": false,
+          "requiredUpdate": true
         }
       ]
     },
@@ -95,20 +111,26 @@
           "type": "ID",
           "required": true,
           "isReference": true,
-          "referenceResource": "Clinic"
+          "referenceResource": "Clinic",
+          "requiredCreate": true,
+          "requiredUpdate": false
         },
         {
           "name": "doctor.entityId",
           "type": "String",
-          "required": false,
+          "required": true,
           "isReference": true,
-          "referenceResource": "Doctor"
+          "referenceResource": "Doctor",
+          "requiredCreate": true,
+          "requiredUpdate": true
         },
         {
           "name": "id",
           "type": "ID",
-          "required": true,
-          "isReference": false
+          "required": false,
+          "isReference": false,
+          "requiredCreate": false,
+          "requiredUpdate": true
         }
       ]
     },
@@ -129,32 +151,42 @@
           "type": "ID",
           "required": true,
           "isReference": true,
-          "referenceResource": "ClinicDoctor"
+          "referenceResource": "ClinicDoctor",
+          "requiredCreate": true,
+          "requiredUpdate": false
         },
         {
           "name": "clinicOffice",
           "type": "ID",
           "required": true,
           "isReference": true,
-          "referenceResource": "ClinicOffice"
+          "referenceResource": "ClinicOffice",
+          "requiredCreate": true,
+          "requiredUpdate": false
         },
         {
           "name": "beginDate",
           "type": "_DateTime",
-          "required": false,
-          "isReference": false
+          "required": true,
+          "isReference": false,
+          "requiredCreate": true,
+          "requiredUpdate": false
         },
         {
           "name": "endDate",
           "type": "_DateTime",
-          "required": false,
-          "isReference": false
+          "required": true,
+          "isReference": false,
+          "requiredCreate": true,
+          "requiredUpdate": false
         },
         {
           "name": "id",
           "type": "ID",
-          "required": true,
-          "isReference": false
+          "required": false,
+          "isReference": false,
+          "requiredCreate": false,
+          "requiredUpdate": true
         }
       ]
     },
@@ -175,38 +207,50 @@
           "type": "ID",
           "required": true,
           "isReference": true,
-          "referenceResource": "ClinicCustomer"
+          "referenceResource": "ClinicCustomer",
+          "requiredCreate": true,
+          "requiredUpdate": false
         },
         {
           "name": "clinicDoctorAvailability",
           "type": "ID",
           "required": true,
           "isReference": true,
-          "referenceResource": "ClinicDoctorAvailability"
+          "referenceResource": "ClinicDoctorAvailability",
+          "requiredCreate": true,
+          "requiredUpdate": false
         },
         {
           "name": "comment",
           "type": "String",
           "required": false,
-          "isReference": false
+          "isReference": false,
+          "requiredCreate": false,
+          "requiredUpdate": false
         },
         {
           "name": "beginDate",
           "type": "_DateTime",
-          "required": false,
-          "isReference": false
+          "required": true,
+          "isReference": false,
+          "requiredCreate": true,
+          "requiredUpdate": false
         },
         {
           "name": "endDate",
           "type": "_DateTime",
-          "required": false,
-          "isReference": false
+          "required": true,
+          "isReference": false,
+          "requiredCreate": true,
+          "requiredUpdate": false
         },
         {
           "name": "id",
           "type": "ID",
-          "required": true,
-          "isReference": false
+          "required": false,
+          "isReference": false,
+          "requiredCreate": false,
+          "requiredUpdate": true
         }
       ]
     },
@@ -227,19 +271,25 @@
           "type": "ID",
           "required": true,
           "isReference": true,
-          "referenceResource": "Clinic"
+          "referenceResource": "Clinic",
+          "requiredCreate": true,
+          "requiredUpdate": false
         },
         {
           "name": "officeNum",
           "type": "String",
-          "required": false,
-          "isReference": false
+          "required": true,
+          "isReference": false,
+          "requiredCreate": true,
+          "requiredUpdate": false
         },
         {
           "name": "id",
           "type": "ID",
-          "required": true,
-          "isReference": false
+          "required": false,
+          "isReference": false,
+          "requiredCreate": false,
+          "requiredUpdate": true
         }
       ]
     },
@@ -258,21 +308,27 @@
         {
           "name": "insuranceNum",
           "type": "String",
-          "required": false,
-          "isReference": false
+          "required": true,
+          "isReference": false,
+          "requiredCreate": true,
+          "requiredUpdate": false
         },
         {
           "name": "person.entityId",
           "type": "String",
-          "required": false,
+          "required": true,
           "isReference": true,
-          "referenceResource": "Person"
+          "referenceResource": "Person",
+          "requiredCreate": true,
+          "requiredUpdate": true
         },
         {
           "name": "id",
           "type": "ID",
-          "required": true,
-          "isReference": false
+          "required": false,
+          "isReference": false,
+          "requiredCreate": false,
+          "requiredUpdate": true
         }
       ]
     },
@@ -293,20 +349,26 @@
           "type": "ID",
           "required": true,
           "isReference": true,
-          "referenceResource": "DoctorType"
+          "referenceResource": "DoctorType",
+          "requiredCreate": true,
+          "requiredUpdate": false
         },
         {
           "name": "person.entityId",
           "type": "String",
-          "required": false,
+          "required": true,
           "isReference": true,
-          "referenceResource": "Person"
+          "referenceResource": "Person",
+          "requiredCreate": true,
+          "requiredUpdate": true
         },
         {
           "name": "id",
           "type": "ID",
-          "required": true,
-          "isReference": false
+          "required": false,
+          "isReference": false,
+          "requiredCreate": false,
+          "requiredUpdate": true
         }
       ]
     },
@@ -326,31 +388,41 @@
           "name": "id",
           "type": "ID",
           "required": true,
-          "isReference": false
+          "isReference": false,
+          "requiredCreate": true,
+          "requiredUpdate": true
         },
         {
           "name": "birthDate",
           "type": "_Date",
           "required": false,
-          "isReference": false
+          "isReference": false,
+          "requiredCreate": false,
+          "requiredUpdate": false
         },
         {
           "name": "firstName",
           "type": "String",
-          "required": false,
-          "isReference": false
+          "required": true,
+          "isReference": false,
+          "requiredCreate": true,
+          "requiredUpdate": false
         },
         {
           "name": "lastName",
           "type": "String",
-          "required": false,
-          "isReference": false
+          "required": true,
+          "isReference": false,
+          "requiredCreate": true,
+          "requiredUpdate": false
         },
         {
           "name": "sex",
           "type": "_EN_Sex",
-          "required": false,
-          "isReference": false
+          "required": true,
+          "isReference": false,
+          "requiredCreate": true,
+          "requiredUpdate": false
         }
       ]
     },
@@ -368,19 +440,25 @@
           "name": "id",
           "type": "ID",
           "required": true,
-          "isReference": false
+          "isReference": false,
+          "requiredCreate": true,
+          "requiredUpdate": false
         },
         {
           "name": "descr",
           "type": "String",
           "required": false,
-          "isReference": false
+          "isReference": false,
+          "requiredCreate": false,
+          "requiredUpdate": false
         },
         {
           "name": "name",
           "type": "String",
-          "required": false,
-          "isReference": false
+          "required": true,
+          "isReference": false,
+          "requiredCreate": true,
+          "requiredUpdate": false
         }
       ]
     },
