@@ -100,6 +100,31 @@ const uniqFields = (fields: RefineGeneratedField[]): RefineGeneratedField[] => {
   return Array.from(map.values())
 }
 
+const buildUiOverlayFromMeta = (refineMeta: RefineGeneratedMeta) => {
+  const allResourceNames = Array.from(
+    new Set(refineMeta.resources.map((resource) => resource.name).filter(Boolean)),
+  )
+  const sortedResourceNames = allResourceNames.sort((a, b) => a.localeCompare(b))
+
+  return {
+    version: 1,
+    defaultPersona: "admin",
+    personas: {
+      admin: {
+        priority: 100,
+        matchRoles: ["admin", "ADMIN", "realm-admin"],
+        // Keep explicit list to make generated overlay deterministic to current schema.
+        resources: sortedResourceNames,
+        hiddenFields: {},
+        shell: {
+          appTitle: "DS Admin",
+          layoutClassName: "persona-admin",
+        },
+      },
+    },
+  }
+}
+
 const config: CodegenConfig = {
 
   overwrite: true,
@@ -232,6 +257,8 @@ const config: CodegenConfig = {
       })
 
       writeFileSync(basePath + "refineMeta.json", JSON.stringify(refineMeta, null, 2))
+      const overlay = buildUiOverlayFromMeta(refineMeta)
+      writeFileSync(basePath + "../refineUiOverlay.json", `${JSON.stringify(overlay, null, 2)}\n`)
     }
   }
 }

@@ -81,6 +81,31 @@ const uniqFields = (fields) => {
   return Array.from(map.values());
 };
 
+const buildUiOverlayFromMeta = (refineMeta) => {
+  const allResourceNames = Array.from(
+    new Set((refineMeta.resources || []).map((resource) => resource.name).filter(Boolean)),
+  );
+  const sortedResourceNames = allResourceNames.sort((a, b) => a.localeCompare(b));
+
+  return {
+    version: 1,
+    defaultPersona: "admin",
+    personas: {
+      admin: {
+        priority: 100,
+        matchRoles: ["admin", "ADMIN", "realm-admin"],
+        // Keep explicit list to make generated overlay deterministic to current schema.
+        resources: sortedResourceNames,
+        hiddenFields: {},
+        shell: {
+          appTitle: "DS Admin",
+          layoutClassName: "persona-admin",
+        },
+      },
+    },
+  };
+};
+
 const main = () => {
   const schemaPath = path.join(__dirname, "src/graphql/schema.graphql");
   const gqlDocs = glob.sync(path.join(__dirname, "src/graphql/**/*.graphql")).filter(
@@ -222,6 +247,11 @@ const requiredForEntityUpdate = (entityName) => {
 
   fs.writeFileSync(path.join(outDir, "refineMeta.json"), JSON.stringify(refineMeta, null, 2));
   console.log(`Generated refine metadata: ${path.join(outDir, "refineMeta.json")}`);
+
+  const overlayPath = path.join(__dirname, "src/refine/refineUiOverlay.json");
+  const overlay = buildUiOverlayFromMeta(refineMeta);
+  fs.writeFileSync(overlayPath, `${JSON.stringify(overlay, null, 2)}\n`);
+  console.log(`Generated refine overlay: ${overlayPath}`);
 };
 
 main();
