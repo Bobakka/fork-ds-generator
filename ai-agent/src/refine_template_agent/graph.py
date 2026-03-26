@@ -38,6 +38,8 @@ def node_prepare(state: GraphState) -> GraphState:
 
 
 def node_generate(state: GraphState) -> GraphState:
+    import json
+
     if not settings.openai_api_key:
         raise RuntimeError("OPENAI_API_KEY is not set")
 
@@ -48,11 +50,20 @@ def node_generate(state: GraphState) -> GraphState:
     }
     if settings.openai_base_url:
         llm_kwargs["base_url"] = settings.openai_base_url
-    llm = ChatOpenAI(**llm_kwargs)
-    structured = llm.with_structured_output(RefineUiOverlay)
-    result: RefineUiOverlay = structured.invoke(state["messages"])
-    return {"overlay": result.model_dump(mode="json")}
 
+    llm = ChatOpenAI(**llm_kwargs)
+    resp = llm.invoke(state["messages"])
+
+    print("RAW MODEL OUTPUT:")
+    print(resp.content)
+
+    try:
+        raw = json.loads(resp.content)
+    except json.JSONDecodeError as e:
+        raise RuntimeError(f"Model returned invalid JSON: {e}") from e
+
+    result = RefineUiOverlay.model_validate(raw)
+    return {"overlay": result.model_dump(mode="json")}
 
 def build_graph():
     g = StateGraph(GraphState)
