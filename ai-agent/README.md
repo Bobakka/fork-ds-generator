@@ -10,6 +10,18 @@
 
 ## Установка и запуск API
 
+### Скачивание gpt2giga
+
+1) Требуется скачать gpt2giga в отедельную папку на диске
+
+```bash
+git clone https://github.com/ai-forever/gpt2giga.git
+```
+2) После получения ключа для GigaChat на странице созданного проекта, необходимо добавить его в файл .env
+3) В файле .env выставить свойство GPT2GIGA_ENABLE_API_KEY_AUTH=False
+
+### Запуск ai-агента 
+
 ```bash
 cd ai-agent
 cp .env.example .env
